@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PKN - SDGS | Tujuan Pembangunan Berkelanjutan</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="SDGs, Sustainable Development Goals, Tujuan Pembangunan Berkelanjutan, PKN" name="keywords" />
+    <meta content="Informasi lengkap tentang 17 Tujuan Pembangunan Berkelanjutan (SDGs) yang ditetapkan oleh PBB untuk mencapai masa depan yang lebih baik dan berkelanjutan bagi semua" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="lib/aos/aos.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <style>
+      /* Custom styles for SDGs page */
+      :root {
+        --sdg-green: #19875f;
+        --sdg-blue: #0d6efd;
+        --sdg-gradient: linear-gradient(to right, var(--sdg-green), var(--sdg-blue));
+      }
+      
+      .hero-header {
+        position: relative;
+        overflow: hidden;
+        background: var(--sdg-gradient);
+      }
+      
+      .hero-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/sdgs-pattern.png');
+        background-size: cover;
+        opacity: 0.1;
+        z-index: 0;
+      }
+      
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      
+      .gradient-text {
+        background: var(--sdg-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .animated-bar {
+        position: relative;
+        height: 4px;
+        background: var(--sdg-gradient);
+        overflow: hidden;
+      }
+      
+      .animated-bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        animation: shimmer 2s infinite;
+      }
+      
+      @keyframes shimmer {
+        100% {
+          left: 100%;
+        }
+      }
+      
+      .sdg-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        height: 100%;
+        perspective: 1000px;
+      }
+      
+      .sdg-card:hover {
+        transform: translateY(-10px) rotateY(5deg);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      }
+      
+      .sdg-card .card-header {
+        padding: 1.5rem;
+        border: none;
+      }
+      
+      .sdg-card .card-body {
+        padding: 1.5rem;
+      }
+      
+      .counter-box {
+        transition: all 0.4s ease;
+      }
+      
+      .counter-box:hover {
+        transform: translateY(-8px);
+      }
+      
+      .counter-icon {
+        transition: all 0.3s ease;
+      }
+      
+      .counter-box:hover .counter-icon {
+        transform: scale(1.1);
+      }
+      
+      .video-btn {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--sdg-gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      
+      .video-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      }
+      
+      .info-box {
+        border-radius: 12px;
+        background: linear-gradient(120deg, rgba(25, 135, 84, 0.05), rgba(13, 110, 253, 0.05));
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+      }
+      
+      .info-box:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .sdg-action-section {
+        background: linear-gradient(120deg, rgba(25, 135, 84, 0.05), rgba(13, 110, 253, 0.05));
+        border-radius: 20px;
+        padding: 3rem;
+        margin-top: 3rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+      
+      .timeline-item {
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 2.5rem;
+        transition: transform 0.3s ease;
+      }
+      
+      .timeline-item:hover {
+        transform: translateX(5px);
+      }
+      
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: var(--sdg-gradient);
+      }
+      
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--sdg-gradient);
+        box-shadow: 0 0 0 5px rgba(25, 135, 84, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .timeline-item:hover::after {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 8px rgba(25, 135, 84, 0.2);
+      }
+      
+      .scroll-down-btn {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 2rem;
+        animation: bounce 2s infinite;
+        cursor: pointer;
+        z-index: 10;
+      }
+      
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0) translateX(-50%);
+        }
+        40% {
+          transform: translateY(-20px) translateX(-50%);
+        }
+        60% {
+          transform: translateY(-10px) translateX(-50%);
+        }
+      }
+      
+      .sdg-goal-icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+      
+      .progress-bar-animated {
+        position: relative;
+        height: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        background: rgba(0,0,0,0.1);
+        margin: 1rem 0;
+      }
+      
+      .progress-bar-animated .bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 5px;
+        background: var(--sdg-gradient);
+        animation: progress-animation 2s ease-in-out;
+      }
+      
+      .progress-bar-animated .bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, 
+                               transparent, 
+                               rgba(255, 255, 255, 0.4), 
+                               transparent);
+        animation: progress-shine 2s infinite linear;
+      }
+      
+      @keyframes progress-shine {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+      
+      @keyframes progress-animation {
+        from { width: 0; }
+        to { width: var(--progress-width); }
+      }
+      
+      .floating-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 0;
+      }
+      
+      .shape {
+        position: absolute;
+        opacity: 0.1;
+        animation: float 15s infinite linear;
+      }
+      
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(-100vh) rotate(360deg);
+        }
+      }
+      
+      /* Typing effect */
+      .typed-text {
+        font-weight: bold;
+        color: white;
+      }
+      
+      .cursor {
+        display: inline-block;
+        width: 3px;
+        background-color: white;
+        margin-left: 2px;
+        animation: blink 1s infinite;
+      }
+      
+      @keyframes blink {
+        0% { background-color: white; }
+        49% { background-color: white; }
+        50% { background-color: transparent; }
+        99% { background-color: transparent; }
+        100% { background-color: white; }
+      }
+      
+      /* Glassmorphism effect */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      /* Gradient animation */
+      .gradient-bg-animate {
+        background: linear-gradient(-45deg, #19875f, #0d6efd, #198754, #0dcaf0);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+      
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      
+      /* Stats counter */
+      .stat-counter {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--sdg-green);
+        margin-bottom: 0;
+        line-height: 1;
+      }
+      
+      /* Interactive cards */
+      .interactive-card {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      
+      .interactive-card:hover {
+        transform: translateY(-10px);
+      }
+      
+      .interactive-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--sdg-gradient);
+      }
+      
+      /* Highlight box */
+      .highlight-box {
+        border-left: 4px solid var(--sdg-green);
+        padding-left: 1.5rem;
+        margin: 2rem 0;
+      }
+      
+      /* Animated icons */
+      .animated-icon {
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      
+      /* 3D buttons */
+      .btn-3d {
+        position: relative;
+        transition: all 0.3s ease;
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+      }
+      
+      .btn-3d:hover {
+        transform: perspective(1000px) rotateX(10deg) translateY(-5px);
+      }
+      
+      .btn-3d::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.2);
+        left: 0;
+        top: 0;
+        transform: translateZ(-10px);
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-xxl bg-white p-0">
+      <!-- Spinner Start -->
+      <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar & Hero Start -->
+      <div class="container-xxl position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+          <a href="index.html" class="navbar-brand p-0">
+            <img src="images/garuda1.png" alt="Logo" style="height: 70px; margin-right: 10px" />
+            <!-- <h1 class="m-0 d-inline-block align-middle">Garuda</h1> -->
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+              <a href="index.html" class="nav-item nav-link">Home</a>
+              <a href="about.html" class="nav-item nav-link">About</a>
+              <a href="sistem.html" class="nav-item nav-link">Sistem pertahanan</a>
+              <a href="hi.html" class="nav-item nav-link">Hubungan Internasional</a>
+              <a href="nilai.html" class="nav-item nav-link">Nilai Pancasila</a>
+              <a href="sdgs.html" class="nav-item nav-link active">SDGs</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container-xxl py-5 hero-header mb-5">
+          <div class="floating-shapes">
+            <div class="shape" style="top: 20%; left: 10%; width: 80px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 50%; animation-duration: 18s;"></div>
+            <div class="shape" style="top: 60%; left: 30%; width: 60px; height: 60px; background: rgba(255,255,255,0.1); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; animation-duration: 25s;"></div>
+            <div class="shape" style="top: 40%; left: 70%; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; animation-duration: 20s;"></div>
+            <div class="shape" style="top: 80%; left: 80%; width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; animation-duration: 15s;"></div>
+            <div class="shape" style="top: 30%; left: 50%; width: 70px; height: 70px; background: rgba(255,255,255,0.1); border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; animation-duration: 22s;"></div>
+          </div>
+          
+          <div class="container my-5 py-5 px-lg-5 hero-content">
+            <div class="row g-5 pt-5">
+              <div class="col-12 col-lg-7 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="display-3 text-white fw-bold animated slideInLeft">
+                  <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+                </h1>
+                <p class="text-white opacity-75 fs-5 mt-3 mb-4 animated slideInLeft">
+                  17 tujuan global untuk mengakhiri kemiskinan, melindungi planet bumi, dan memastikan kemakmuran bagi semua sebagai bagian dari agenda pembangunan berkelanjutan
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 mt-4 animated slideInLeft">
+                  <a href="#sdgs-info" class="btn btn-light rounded-pill px-4 py-3 shadow-sm btn-3d">
+                    <i class="fas fa-info-circle me-2"></i> Pelajari Lebih Lanjut
+                  </a>
+                  <a href="#sdgs-goals" class="btn btn-outline-light rounded-pill px-4 py-3 btn-3d">
+                    <i class="fas fa-list-ol me-2"></i> Lihat 17 Tujuan
+                  </a>
+                </div>
+                <nav aria-label="breadcrumb" class="mt-4">
+                  <ol class="breadcrumb justify-content-center justify-content-lg-start animated slideInLeft">
+                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">SDGs</li>
+                  </ol>
+                </nav>
+              </div>
+              <div class="col-12 col-lg-5 d-none d-lg-block" data-aos="fade-left" data-aos-duration="1000">
+                <div class="position-relative">
+                  <img src="images/Sdgs.jpg" alt="SDGs Circle" class="img-fluid rounded-circle shadow-lg animated zoomIn" style="animation-delay: 0.5s;">
+                  <div class="position-absolute top-50 start-50 translate-middle">
+                    <div class="d-flex align-items-center justify-content-center bg-white rounded-circle shadow-lg" style="width: 120px; height: 120px;">
+                      <div class="text-center">
+                        <h2 class="gradient-text fw-bold mb-0">2030</h2>
+                        <p class="small mb-0">Target Tahun</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#sdgs-info" class="scroll-down-btn">
+            <i class="bi bi-chevron-down"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Navbar & Hero End -->
+
+      <!-- Full Screen Search Start -->
+      <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content" style="background: rgba(29, 40, 51, 0.95)">
+            <div class="modal-header border-0">
+              <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center justify-content-center">
+              <div class="input-group" style="max-width: 600px">
+                <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Cari informasi tentang SDGs..." />
+                <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Full Screen Search End -->
+
+      <!-- Main Content Start -->
+      <div class="container-xxl py-5" id="sdgs-info" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container px-lg-5">
+          <div class="section-title position-relative text-center mx-auto mb-5 pb-4" style="max-width: 800px">
+            <h1 class="mb-3 fw-bold gradient-text">Sustainable Development Goals</h1>
+            <div class="animated-bar mx-auto mb-3" style="width: 80px; height: 4px;"></div>
+            <p class="mb-1 fs-5">Agenda global untuk mencapai masa depan yang lebih baik dan berkelanjutan bagi semua</p>
+          </div>
+
+          <!-- SDGs Hero Section with Animated Elements -->
+          <div class="row g-5 mb-5 align-items-center">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+              <h2 class="fw-bold mb-4 gradient-text" style="position: relative; display: inline-block;">
+                Apa itu SDGs?
+                <span class="position-absolute" style="height: 8px; width: 60%; bottom: -8px; left: 0; background: linear-gradient(90deg, #198754, transparent);"></span>
+              </h2>
+              <p class="mb-4">
+                <strong>Sustainable Development Goals (SDGs)</strong> atau Tujuan Pembangunan Berkelanjutan adalah serangkaian 17 tujuan global yang ditetapkan oleh Perserikatan Bangsa-Bangsa (PBB) pada tahun 2015 sebagai agenda universal untuk mencapai pembangunan berkelanjutan pada tahun 2030.
+              </p>
+              <p class="mb-4">
+                SDGs merupakan kelanjutan dari Millennium Development Goals (MDGs) yang berakhir pada tahun 2015. SDGs memiliki cakupan yang lebih luas dan komprehensif, mencakup aspek ekonomi, sosial, dan lingkungan dalam pembangunan berkelanjutan.
+              </p>
+              
+              <div class="highlight-box">
+                <h5 class="fw-bold">Prinsip Utama SDGs</h5>
+                <p class="mb-0">SDGs didasarkan pada prinsip "Tidak Ada Seorangpun yang Tertinggal" (Leave No One Behind), yang menekankan pentingnya memastikan bahwa semua orang, terutama yang paling rentan, dapat menikmati manfaat pembangunan berkelanjutan.</p>
+              </div>
+              
+              <div class="info-box mt-4 shadow-sm" data-aos="zoom-in" data-aos-delay="200">
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px; background-color: rgba(25, 135, 84, 0.1);">
+                    <i class="fas fa-globe-asia fa-2x animated-icon" style="color: #198754;"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-0">Agenda Global 2030</h5>
+                    <p class="mb-0 small text-muted">Komitmen bersama untuk masa depan berkelanjutan</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="timeline-item mt-5 ps-4" data-aos="fade-up" data-aos-delay="300">
+                <h5 class="fw-bold">September 2015</h5>
+                <p>193 negara anggota PBB secara resmi mengadopsi Agenda 2030 untuk Pembangunan Berkelanjutan</p>
+              </div>
+              
+              <div class="timeline-item ps-4" data-aos="fade-up" data-aos-delay="400">
+                <h5 class="fw-bold">Januari 2016</h5>
+                <p>SDGs mulai berlaku secara resmi, menggantikan MDGs yang berakhir pada Desember 2015</p>
+              </div>
+              
+              <div class="timeline-item ps-4" data-aos="fade-up" data-aos-delay="500">
+                <h5 class="fw-bold">2030</h5>
+                <p>Target pencapaian seluruh tujuan SDGs secara global</p>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+              <div class="position-relative rounded-4 overflow-hidden h-100 shadow-lg" style="min-height: 400px;">
+                <img src="images/sdgs-goals.jpg" alt="SDGs Goals" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(25, 135, 84, 0.1);">
+                  <a href="https://www.youtube.com/watch?v=0XTBYMfZyrM" class="video-btn">
+                    <i class="bi bi-play-fill fs-1 ms-1"></i>
+                  </a>
+                </div>
+                <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <p class="text-white mb-0">Video: Penjelasan tentang SDGs oleh PBB</p>
+                </div>
+              </div>
+              
+              <div class="row g-4 mt-4">
+                <div class="col-md-6">
+                  <div class="glass-card p-4 rounded-4 text-white h-100" style="background: linear-gradient(135deg, #19875f, #0d6efd);">
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-chart-line fa-2x me-3"></i>
+                      <h5 class="fw-bold mb-0">169 Target</h5>
+                    </div>
+                    <p class="mb-0 small">SDGs memiliki 169 target spesifik yang terukur untuk memastikan implementasi yang efektif dan akuntabel.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="glass-card p-4 rounded-4 text-white h-100" style="background: linear-gradient(135deg, #0d6efd, #19875f);">
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-tasks fa-2x me-3"></i>
+                      <h5 class="fw-bold mb-0">232 Indikator</h5>
+                    </div>
+                    <p class="mb-0 small">Kemajuan SDGs diukur melalui 232 indikator unik yang disepakati secara global.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SDGs Counter Section with Animated Counters -->
+          <div class="row g-4 mb-5">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="counter-box text-center p-4 border-0 shadow-lg rounded-4 position-relative overflow-hidden">
+                <div class="position-absolute" style="width: 100%; height: 5px; bottom: 0; left: 0; background: linear-gradient(90deg, #198754, #0d6efd);"></div>
+                <div class="counter-icon mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background-color: rgba(25, 135, 84, 0.1);">
+                  <i class="fas fa-list-ol fa-2x" style="color: #198754;"></i>
+                </div>
+                <h1 class="display-4 fw-bold mb-2 stat-counter" style="color: #198754;" data-toggle="counter-up">17</h1>
+                <h5 class="mb-0">Tujuan Global</h5>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="counter-box text-center p-4 border-0 shadow-lg rounded-4 position-relative overflow-hidden">
+                <div class="position-absolute" style="width: 100%; height: 5px; bottom: 0; left: 0; background: linear-gradient(90deg, #198754, #0d6efd);"></div>
+                <div class="counter-icon mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background-color: rgba(25, 135, 84, 0.1);">
+                  <i class="fas fa-bullseye fa-2x" style="color: #198754;"></i>
+                </div>
+                <h1 class="display-4 fw-bold mb-2 stat-counter" style="color: #198754;" data-toggle="counter-up">169</h1>
+                <h5 class="mb-0">Target</h5>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="counter-box text-center p-4 border-0 shadow-lg rounded-4 position-relative overflow-hidden">
+                <div class="position-absolute" style="width: 100%; height: 5px; bottom: 0; left: 0; background: linear-gradient(90deg, #198754, #0d6efd);"></div>
+                <div class="counter-icon mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background-color: rgba(25, 135, 84, 0.1);">
+                  <i class="fas fa-flag fa-2x" style="color: #198754;"></i>
+                </div>
+                <h1 class="display-4 fw-bold mb-2 stat-counter" style="color: #198754;" data-toggle="counter-up">193</h1>
+                <h5 class="mb-0">Negara Anggota</h5>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="counter-box text-center p-4 border-0 shadow-lg rounded-4 position-relative overflow-hidden">
+                <div class="position-absolute" style="width: 100%; height: 5px; bottom: 0; left: 0; background: linear-gradient(90deg, #198754, #0d6efd);"></div>
+                <div class="counter-icon mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; background-color: rgba(25, 135, 84, 0.1);">
+                  <i class="fas fa-calendar-check fa-2x" style="color: #198754;"></i>
+                </div>
+                <h1 class="display-4 fw-bold mb-2 stat-counter" style="color: #198754;" data-toggle="counter-up">2030</h1>
+                <h5 class="mb-0">Target Tahun</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- 17 SDGs Cards with Interactive Elements -->
+          <div class="row g-4 mb-5" id="sdgs-goals">
+            <div class="col-12 text-center mb-4" data-aos="fade-up" data-aos-delay="100">
+              <h2 class="fw-bold position-relative d-inline-block gradient-text">
+                17 Tujuan Pembangunan Berkelanjutan
+                <div class="position-absolute" style="height: 4px; width: 50%; bottom: -10px; left: 25%; background: linear-gradient(90deg, transparent, #198754, transparent);"></div>
+              </h2>
+              <p class="text-muted mt-3">Kerangka komprehensif untuk mencapai masa depan yang lebih baik dan berkelanjutan</p>
+            </div>
+
+            <!-- SDG 1 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0" style="background-color: #E5243B;">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                      <h3 class="fw-bold mb-0" style="color: #E5243B;">1</h3>
+                    </div>
+                    <h4 class="fw-bold mb-0 text-white">Tanpa Kemiskinan</h4>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <p class="mb-4">Mengakhiri kemiskinan dalam segala bentuk di manapun. SDG 1 bertujuan untuk mengentaskan kemiskinan ekstrem dan mengurangi setidaknya setengah proporsi penduduk yang hidup dalam kemiskinan.</p>
+                  <div class="p-3 rounded-3" style="background-color: rgba(229, 36, 59, 0.05);">
+                    <h6 class="fw-bold mb-2">Target Utama:</h6>
+                    <ul class="mb-0 ps-3">
+                      <li>Mengentaskan kemiskinan ekstrem (kurang dari $1,90 per hari)</li>
+                      <li>Mengurangi proporsi penduduk miskin setidaknya setengahnya</li>
+                      <li>Membangun ketahanan masyarakat rentan</li>
+                      <li>Menjamin akses yang sama terhadap sumber daya ekonomi</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer p-3 border-0 text-center" style="background-color: rgba(229, 36, 59, 0.05);">
+                  <a href="https://sdgs.un.org/goals/goal1" target="_blank" class="btn btn-sm" style="background-color: #E5243B; color: white;">Pelajari Lebih Lanjut</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- SDG 2 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0" style="background-color: #DDA63A;">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                      <h3 class="fw-bold mb-0" style="color: #DDA63A;">2</h3>
+                    </div>
+                    <h4 class="fw-bold mb-0 text-white">Tanpa Kelaparan</h4>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <p class="mb-4">Mengakhiri kelaparan, mencapai ketahanan pangan dan nutrisi yang lebih baik, serta mendukung pertanian berkelanjutan untuk memastikan akses pangan yang cukup bagi semua orang.</p>
+                  <div class="p-3 rounded-3" style="background-color: rgba(221, 166, 58, 0.05);">
+                    <h6 class="fw-bold mb-2">Target Utama:</h6>
+                    <ul class="mb-0 ps-3">
+                      <li>Mengakhiri kelaparan dan malnutrisi dalam segala bentuk</li>
+                      <li>Meningkatkan produktivitas pertanian dan pendapatan produsen pangan skala kecil</li>
+                      <li>Menjamin sistem produksi pangan berkelanjutan</li>
+                      <li>Memelihara keragaman genetik benih dan tanaman</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer p-3 border-0 text-center" style="background-color: rgba(221, 166, 58, 0.05);">
+                  <a href="https://sdgs.un.org/goals/goal2" target="_blank" class="btn btn-sm" style="background-color: #DDA63A; color: white;">Pelajari Lebih Lanjut</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- SDG 3 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0" style="background-color: #4C9F38;">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                      <h3 class="fw-bold mb-0" style="color: #4C9F38;">3</h3>
+                    </div>
+                    <h4 class="fw-bold mb-0 text-white">Kehidupan Sehat</h4>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <p class="mb-4">Memastikan kehidupan yang sehat dan mendukung kesejahteraan bagi semua untuk semua usia melalui akses layanan kesehatan yang berkualitas dan terjangkau.</p>
+                  <div class="p-3 rounded-3" style="background-color: rgba(76, 159, 56, 0.05);">
+                    <h6 class="fw-bold mb-2">Target Utama:</h6>
+                    <ul class="mb-0 ps-3">
+                      <li>Mengurangi angka kematian ibu dan bayi secara signifikan</li>
+                      <li>Mengakhiri epidemi AIDS, tuberkulosis, malaria, dan penyakit menular lainnya</li>
+                      <li>Menjamin akses universal terhadap layanan kesehatan seksual dan reproduksi</li>
+                      <li>Mencapai cakupan kesehatan universal</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer p-3 border-0 text-center" style="background-color: rgba(76, 159, 56, 0.05);">
+                  <a href="https://sdgs.un.org/goals/goal3" target="_blank" class="btn btn-sm" style="background-color: #4C9F38; color: white;">Pelajari Lebih Lanjut</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- SDG 4 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0" style="background-color: #C5192D;">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                      <h3 class="fw-bold mb-0" style="color: #C5192D;">4</h3>
+                    </div>
+                    <h4 class="fw-bold mb-0 text-white">Pendidikan Berkualitas</h4>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <p class="mb-4">Memastikan pendidikan yang inklusif dan berkualitas serta mempromosikan kesempatan belajar seumur hidup bagi semua orang.</p>
+                  <div class="p-3 rounded-3" style="background-color: rgba(197, 25, 45, 0.05);">
+                    <h6 class="fw-bold mb-2">Target Utama:</h6>
+                    <ul class="mb-0 ps-3">
+                      <li>Memastikan semua anak menyelesaikan pendidikan dasar dan menengah yang gratis dan berkualitas</li>
+                      <li>Memastikan akses yang sama ke pendidikan teknis, kejuruan, dan tinggi yang terjangkau</li>
+                      <li>Meningkatkan jumlah orang dengan keterampilan yang relevan untuk pekerjaan dan kewirausahaan</li>
+                      <li>Menghilangkan disparitas gender dalam pendidikan</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer p-3 border-0 text-center" style="background-color: rgba(197, 25, 45, 0.05);">
+                  <a href="https://sdgs.un.org/goals/goal4" target="_blank" class="btn btn-sm" style="background-color: #C5192D; color: white;">Pelajari Lebih Lanjut</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- SDG 5 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0" style="background-color: #FF3A21;">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                      <h3 class="fw-bold mb-0" style="color: #FF3A21;">5</h3>
+                    </div>
+                    <h4 class="fw-bold mb-0 text-white">Kesetaraan Gender</h4>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <p class="mb-4">Mencapai kesetaraan gender dan memberdayakan semua perempuan dan anak perempuan untuk berpartisipasi penuh dalam kehidupan ekonomi, sosial, dan politik.</p>
+                  <div class="p-3 rounded-3" style="background-color: rgba(255, 58, 33, 0.05);">
+                    <h6 class="fw-bold mb-2">Target Utama:</h6>
+                    <ul class="mb-0 ps-3">
+                      <li>Mengakhiri segala bentuk diskriminasi terhadap perempuan dan anak perempuan</li>
+                      <li>Menghapuskan segala bentuk kekerasan terhadap perempuan dan anak perempuan</li>
+                      <li>Memastikan partisipasi penuh dan efektif perempuan dalam kepemimpinan</li>
+                      <li>Menjamin akses universal terhadap kesehatan seksual dan reproduksi</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer p-3 border-0 text-center" style="background-color: rgba(255, 58, 33, 0.05);">
+                  <a href="https://sdgs.un.org/goals/goal5" target="_blank" class="btn btn-sm" style="background-color: #FF3A21; color: white;">Pelajari Lebih Lanjut</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- SDG 6 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0" style="background-color: #26BDE2;">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                      <h3 class="fw-bold mb-0" style="color: #26BDE2;">6</h3>
+                    </div>
+                    <h4 class="fw-bold mb-0 text-white">Air Bersih dan Sanitasi</h4>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <p class="mb-4">Memastikan ketersediaan dan pengelolaan air bersih dan sanitasi yang berkelanjutan bagi semua orang, termasuk akses ke air minum yang aman.</p>
+                  <div class="p-3 rounded-3" style="background-color: rgba(38, 189, 226, 0.05);">
+                    <h6 class="fw-bold mb-2">Target Utama:</h6>
+                    <ul class="mb-0 ps-3">
+                      <li>Mencapai akses universal dan merata terhadap air minum yang aman dan terjangkau</li>
+                      <li>Mencapai akses sanitasi dan kebersihan yang memadai dan merata</li>
+                      <li>Meningkatkan kualitas air dengan mengurangi polusi</li>
+                      <li>Meningkatkan efisiensi penggunaan air dan memastikan pasokan air tawar yang berkelanjutan</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer p-3 border-0 text-center" style="background-color: rgba(38, 189, 226, 0.05);">
+                  <a href="https://sdgs.un.org/goals/goal6" target="_blank" class="btn btn-sm" style="background-color: #26BDE2; color: white;">Pelajari Lebih Lanjut</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- SDG 7 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0" style="background-color: #FCC30B;">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                      <h3 class="fw-bold mb-0" style="color: #FCC30B;">7</h3>
+                    </div>
+                    <h4 class="fw-bold mb-0 text-white">Energi Bersih dan Terjangkau</h4>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <p class="mb-4">Memastikan akses terhadap energi yang terjangkau, andal, berkelanjutan, dan modern bagi semua orang, termasuk peningkatan energi terbarukan.</p>
+                  <div class="p-3 rounded-3" style="background-color: rgba(252, 195, 11, 0.05);">
+                    <h6 class="fw-bold mb-2">Target Utama:</h6>
+                    <ul class="mb-0 ps-3">
+                      <li>Memastikan akses universal terhadap layanan energi yang terjangkau, andal, dan modern</li>
+                      <li>Meningkatkan secara substansial proporsi energi terbarukan dalam bauran energi global</li>
+                      <li>Meningkatkan efisiensi energi global</li>
+                      <li>Memperluas infrastruktur dan meningkatkan teknologi untuk penyediaan layanan energi modern dan berkelanjutan</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer p-3 border-0 text-center" style="background-color: rgba(252, 195, 11, 0.05);">
+                  <a href="https://sdgs.un.org/goals/goal7" target="_blank" class="btn btn-sm" style="background-color: #FCC30B; color: white;">Pelajari Lebih Lanjut</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- SDG 8 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0" style="background-color: #A21942;">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                      <h3 class="fw-bold mb-0" style="color: #A21942;">8</h3>
+                    </div>
+                    <h4 class="fw-bold mb-0 text-white">Pekerjaan Layak dan Pertumbuhan Ekonomi</h4>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <p class="mb-4">Mendorong pertumbuhan ekonomi yang berkelanjutan dan inklusif, lapangan kerja penuh dan produktif, serta pekerjaan yang layak bagi semua orang.</p>
+                  <div class="p-3 rounded-3" style="background-color: rgba(162, 25, 66, 0.05);">
+                    <h6 class="fw-bold mb-2">Target Utama:</h6>
+                    <ul class="mb-0 ps-3">
+                      <li>Mempertahankan pertumbuhan ekonomi per kapita sesuai dengan kondisi nasional</li>
+                      <li>Mencapai tingkat produktivitas ekonomi yang lebih tinggi</li>
+                      <li>Mempromosikan kebijakan yang mendukung kegiatan produktif dan penciptaan lapangan kerja</li>
+                      <li>Mengurangi proporsi pemuda yang tidak bekerja, tidak menempuh pendidikan atau pelatihan</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer p-3 border-0 text-center" style="background-color: rgba(162, 25, 66, 0.05);">
+                  <a href="https://sdgs.un.org/goals/goal8" target="_blank" class="btn btn-sm" style="background-color: #A21942; color: white;">Pelajari Lebih Lanjut</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- SDG 9 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0" style="background-color: #FD6925;">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                      <h3 class="fw-bold mb-0" style="color: #FD6925;">9</h3>
+                    </div>
+                    <h4 class="fw-bold mb-0 text-white">Industri, Inovasi dan Infrastruktur</h4>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <p class="mb-4">Membangun infrastruktur yang tangguh, mempromosikan industrialisasi yang inklusif dan berkelanjutan, serta mendorong inovasi.</p>
+                  <div class="p-3 rounded-3" style="background-color: rgba(253, 105, 37, 0.05);">
+                    <h6 class="fw-bold mb-2">Target Utama:</h6>
+                    <ul class="mb-0 ps-3">
+                      <li>Mengembangkan infrastruktur yang berkualitas, andal, berkelanjutan, dan tangguh</li>
+                      <li>Mempromosikan industrialisasi inklusif dan berkelanjutan</li>
+                      <li>Meningkatkan akses industri kecil terhadap jasa keuangan</li>
+                      <li>Meningkatkan penelitian ilmiah dan meningkatkan kapabilitas teknologi sektor industri</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer p-3 border-0 text-center" style="background-color: rgba(253, 105, 37, 0.05);">
+                  <a href="https://sdgs.un.org/goals/goal9" target="_blank" class="btn btn-sm" style="background-color: #FD6925; color: white;">Pelajari Lebih Lanjut</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- SDGs Progress Dashboard -->
+          <div class="row g-5 mb-5" id="sdgs-progress">
+            <div class="col-12 text-center mb-4" data-aos="fade-up">
+              <h2 class="fw-bold position-relative d-inline-block gradient-text">
+                Kemajuan Global SDGs
+                <div class="position-absolute" style="height: 4px; width: 50%; bottom: -10px; left: 25%; background: linear-gradient(90deg, transparent, #198754, transparent);"></div>
+              </h2>
+              <p class="text-muted mt-3">Data terkini tentang kemajuan pencapaian SDGs di seluruh dunia</p>
+            </div>
+            
+            <div class="col-lg-8" data-aos="fade-up">
+              <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header p-4 gradient-bg-animate">
+                  <h4 class="text-white mb-0">Indeks Pencapaian SDGs Global 2023</h4>
+                </div>
+                <div class="card-body p-4">
+                  <p class="mb-4">Berdasarkan <strong>Sustainable Development Report 2023</strong> yang diterbitkan oleh United Nations Sustainable Development Solutions Network (SDSN), berikut adalah kemajuan pencapaian SDGs secara global:</p>
+                  
+                  <div class="row g-4">
+                    <div class="col-md-6">
+                      <h5 class="fw-bold mb-3">Tujuan dengan Kemajuan Terbaik</h5>
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                          <div class="sdg-goal-icon" style="background-color: #4C9F38;">
+                            <span class="text-white fw-bold">3</span>
+                          </div>
+                          <h6 class="mb-0">Kehidupan Sehat dan Sejahtera</h6>
+                        </div>
+                        <div class="progress-bar-animated" style="--progress-width: 78%;">
+                          <div class="bar" style="width: 78%;"></div>
+                        </div>
+                        <p class="small text-end mb-0">78% tercapai</p>
+                      </div>
+                      
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                          <div class="sdg-goal-icon" style="background-color: #C5192D;">
+                            <span class="text-white fw-bold">4</span>
+                          </div>
+                          <h6 class="mb-0">Pendidikan Berkualitas</h6>
+                        </div>
+                        <div class="progress-bar-animated" style="--progress-width: 72%;">
+                          <div class="bar" style="width: 72%;"></div>
+                        </div>
+                        <p class="small text-end mb-0">72% tercapai</p>
+                      </div>
+                      
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                          <div class="sdg-goal-icon" style="background-color: #FCC30B;">
+                            <span class="text-white fw-bold">7</span>
+                          </div>
+                          <h6 class="mb-0">Energi Bersih dan Terjangkau</h6>
+                        </div>
+                        <div class="progress-bar-animated" style="--progress-width: 70%;">
+                          <div class="bar" style="width: 70%;"></div>
+                        </div>
+                        <p class="small text-end mb-0">70% tercapai</p>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                      <h5 class="fw-bold mb-3">Tujuan yang Memerlukan Perhatian</h5>
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                          <div class="sdg-goal-icon" style="background-color: #56C02B;">
+                            <span class="text-white fw-bold">13</span>
+                          </div>
+                          <h6 class="mb-0">Penanganan Perubahan Iklim</h6>
+                        </div>
+                        <div class="progress-bar-animated" style="--progress-width: 45%;">
+                          <div class="bar" style="width: 45%;"></div>
+                        </div>
+                        <p class="small text-end mb-0">45% tercapai</p>
+                      </div>
+                      
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                          <div class="sdg-goal-icon" style="background-color: #19486A;">
+                            <span class="text-white fw-bold">14</span>
+                          </div>
+                          <h6 class="mb-0">Ekosistem Laut</h6>
+                        </div>
+                        <div class="progress-bar-animated" style="--progress-width: 42%;">
+                          <div class="bar" style="width: 42%;"></div>
+                        </div>
+                        <p class="small text-end mb-0">42% tercapai</p>
+                      </div>
+                      
+                      <div class="mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                          <div class="sdg-goal-icon" style="background-color: #3F7E44;">
+                            <span class="text-white fw-bold">15</span>
+                          </div>
+                          <h6 class="mb-0">Ekosistem Daratan</h6>
+                        </div>
+                        <div class="progress-bar-animated" style="--progress-width: 48%;">
+                          <div class="bar" style="width: 48%;"></div>
+                        </div>
+                        <p class="small text-end mb-0">48% tercapai</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="alert alert-info mt-4 mb-0">
+                    <div class="d-flex">
+                      <i class="fas fa-info-circle fa-2x me-3"></i>
+                      <div>
+                        <h6 class="fw-bold mb-1">Pandemi COVID-19 Berdampak Signifikan</h6>
+                        <p class="mb-0 small">Pandemi COVID-19 telah memperlambat kemajuan pencapaian SDGs secara global dan bahkan membalikkan beberapa kemajuan yang telah dicapai, terutama dalam pengentasan kemiskinan dan kelaparan.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card border-0 shadow-lg rounded-4 overflow-hidden h-100">
+                <div class="card-header p-4 gradient-bg-animate">
+                  <h4 class="text-white mb-0">Tantangan Global</h4>
+                </div>
+                <div class="card-body p-4">
+                  <div class="mb-4">
+                    <h5 class="fw-bold mb-3">Kesenjangan Pendanaan</h5>
+                    <p class="small">Diperkirakan dibutuhkan $2,5-3 triliun per tahun untuk mencapai SDGs di negara berkembang, namun saat ini terdapat kesenjangan pendanaan sekitar $2,5 triliun per tahun.</p>
+                    <div class="progress-bar-animated" style="--progress-width: 35%;">
+                      <div class="bar" style="width: 35%;"></div>
+                    </div>
+                    <p class="small text-end mb-0">35% kebutuhan pendanaan terpenuhi</p>
+                  </div>
+                  
+                  <div class="mb-4">
+                    <h5 class="fw-bold mb-3">Ketidaksetaraan Antar Negara</h5>
+                    <p class="small">Terdapat kesenjangan besar dalam kemajuan SDGs antara negara maju dan negara berkembang, terutama di Afrika Sub-Sahara dan Asia Selatan.</p>
+                  </div>
+                  
+                  <div class="mb-4">
+                    <h5 class="fw-bold mb-3">Perubahan Iklim</h5>
+                    <p class="small">Dampak perubahan iklim semakin mengancam pencapaian banyak tujuan SDGs, terutama yang terkait dengan ketahanan pangan, air bersih, dan pengentasan kemiskinan.</p>
+                  </div>
+                  
+                  <div class="interactive-card p-3 rounded-3" style="background-color: rgba(25, 135, 84, 0.05);">
+                    <div class="d-flex align-items-center mb-2">
+                      <i class="fas fa-lightbulb fa-2x me-3" style="color: #198754;"></i>
+                      <h5 class="fw-bold mb-0">Solusi Inovatif Diperlukan</h5>
+                    </div>
+                    <p class="small mb-0">Diperlukan pendekatan inovatif, kemitraan multi-pihak, dan peningkatan komitmen politik untuk mempercepat kemajuan pencapaian SDGs menjelang 2030.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SDGs in Indonesia Section -->
+          <div class="row g-5 mb-5 align-items-center">
+            <div class="col-12 text-center mb-4" data-aos="fade-up">
+              <h2 class="fw-bold position-relative d-inline-block gradient-text">
+                SDGs di Indonesia
+                <div class="position-absolute" style="height: 4px; width: 50%; bottom: -10px; left: 25%; background: linear-gradient(90deg, transparent, #198754, transparent);"></div>
+              </h2>
+              <p class="text-muted mt-3">Implementasi dan kemajuan Tujuan Pembangunan Berkelanjutan di Indonesia</p>
+            </div>
+            
+            <div class="col-lg-6" data-aos="fade-right">
+              <h3 class="fw-bold mb-4 gradient-text">Komitmen Indonesia</h3>
+              <p class="mb-4">Indonesia telah berkomitmen untuk mengimplementasikan SDGs melalui Peraturan Presiden Nomor 59 Tahun 2017 tentang Pelaksanaan Pencapaian Tujuan Pembangunan Berkelanjutan. Implementasi SDGs di Indonesia melibatkan berbagai pemangku kepentingan, termasuk pemerintah, masyarakat sipil, akademisi, filantropi, dan sektor swasta.</p>
+              
+              <div class="info-box mb-4 shadow-sm">
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background-color: rgba(25, 135, 84, 0.1);">
+                    <i class="fas fa-landmark fa-lg animated-icon" style="color: #198754;"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-0">Perpres No. 59 Tahun 2017</h5>
+                    <p class="mb-0 small text-muted">Landasan hukum implementasi SDGs di Indonesia</p>
+                  </div>
+                </div>
+              </div>
+              
+              <h5 class="fw-bold mb-3">Prioritas Nasional:</h5>
+              <ul class="mb-4">
+                <li>Pengentasan kemiskinan dan kelaparan</li>
+                <li>Peningkatan kesehatan dan pendidikan</li>
+                <li>Pertumbuhan ekonomi yang inklusif</li>
+                <li>Pelestarian lingkungan hidup</li>
+                <li>Pembangunan infrastruktur berkelanjutan</li>
+              </ul>
+              
+              <div class="progress-bar-animated" style="--progress-width: 65%;">
+                <div class="bar" style="width: 65%;"></div>
+              </div>
+              <p class="small text-end mb-0">Kemajuan implementasi SDGs di Indonesia: 65%</p>
+              
+              <div class="highlight-box mt-4">
+                <h5 class="fw-bold">Integrasi dengan Rencana Pembangunan</h5>
+                <p class="mb-0">Indonesia telah mengintegrasikan SDGs ke dalam Rencana Pembangunan Jangka Menengah Nasional (RPJMN) 2020-2024 dan Rencana Pembangunan Jangka Panjang Nasional (RPJPN) 2005-2025.</p>
+              </div>
+            </div>
+            
+            <div class="col-lg-6" data-aos="fade-left">
+              <div class="rounded-4 overflow-hidden shadow-lg">
+                <img src="images/sdgs-indonesia.jpg" alt="SDGs di Indonesia" class="img-fluid w-100">
+              </div>
+              
+              <div class="row g-4 mt-4">
+                <div class="col-md-6">
+                  <div class="p-4 rounded-4 h-100 shadow-sm" style="background-color: rgba(25, 135, 84, 0.05);">
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-users fa-2x me-3" style="color: #198754;"></i>
+                      <h5 class="fw-bold mb-0">Kolaborasi Multi-Pihak</h5>
+                    </div>
+                    <p class="mb-0 small">Implementasi SDGs di Indonesia melibatkan kerjasama antara pemerintah, masyarakat sipil, akademisi, filantropi, dan sektor swasta.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-4 rounded-4 h-100 shadow-sm" style="background-color: rgba(25, 135, 84, 0.05);">
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-chart-line fa-2x me-3" style="color: #198754;"></i>
+                      <h5 class="fw-bold mb-0">Monitoring & Evaluasi</h5>
+                    </div>
+                    <p class="mb-0 small">Indonesia telah mengembangkan sistem monitoring dan evaluasi untuk melacak kemajuan pencapaian SDGs di tingkat nasional dan daerah.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card mt-4 border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header p-3 gradient-bg-animate">
+                  <h5 class="text-white mb-0">Pencapaian Utama Indonesia</h5>
+                </div>
+                <div class="card-body p-3">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                      <i class="fas fa-check" style="color: #198754;"></i>
+                    </div>
+                    <p class="mb-0 small">Penurunan tingkat kemiskinan ekstrem dari 19,1% (2000) menjadi di bawah 5% (2022)</p>
+                  </div>
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                      <i class="fas fa-check" style="color: #198754;"></i>
+                    </div>
+                    <p class="mb-0 small">Peningkatan akses pendidikan dasar hingga mencapai hampir 100%</p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                      <i class="fas fa-check" style="color: #198754;"></i>
+                    </div>
+                    <p class="mb-0 small">Peningkatan cakupan jaminan kesehatan nasional hingga lebih dari 80% populasi</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Call to Action Section -->
+          <div class="sdg-action-section" data-aos="fade-up">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-8">
+                <h2 class="fw-bold mb-3 gradient-text">Bergabunglah dalam Aksi untuk SDGs</h2>
+                <p class="mb-4">Setiap orang dapat berkontribusi untuk mencapai Tujuan Pembangunan Berkelanjutan. Mari ambil tindakan nyata untuk masa depan yang lebih baik dan berkelanjutan bagi semua.</p>
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                        <i class="fas fa-lightbulb animated-icon" style="color: #198754;"></i>
+                      </div>
+                      <h5 class="fw-bold mb-0">Edukasi Diri Sendiri</h5>
+                    </div>
+                    <p class="small mb-0">Pelajari lebih lanjut tentang SDGs dan bagaimana Anda dapat berkontribusi dalam kehidupan sehari-hari.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                        <i class="fas fa-hands-helping animated-icon" style="color: #198754;"></i>
+                      </div>
+                      <h5 class="fw-bold mb-0">Berpartisipasi Aktif</h5>
+                    </div>
+                    <p class="small mb-0">Bergabunglah dengan komunitas atau organisasi yang bekerja untuk mencapai SDGs di lingkungan Anda.</p>
+                  </div>
+                </div>
+                
+                <div class="row g-4 mt-2">
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                        <i class="fas fa-recycle animated-icon" style="color: #198754;"></i>
+                      </div>
+                      <h5 class="fw-bold mb-0">Gaya Hidup Berkelanjutan</h5>
+                    </div>
+                    <p class="small mb-0">Terapkan gaya hidup yang lebih berkelanjutan dengan mengurangi limbah, menghemat energi, dan membuat pilihan konsumsi yang bertanggung jawab.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                        <i class="fas fa-bullhorn animated-icon" style="color: #198754;"></i>
+                      </div>
+                      <h5 class="fw-bold mb-0">Sebarkan Kesadaran</h5>
+                    </div>
+                    <p class="small mb-0">Bagikan informasi tentang SDGs kepada keluarga, teman, dan komunitas Anda untuk meningkatkan kesadaran dan mendorong tindakan kolektif.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 text-center">
+                <a href="https://sdgs.bappenas.go.id/" target="_blank" class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow btn-3d">
+                  <i class="fas fa-external-link-alt me-2"></i> Kunjungi SDGs Indonesia
+                </a>
+                <p class="small mt-3 mb-0">Portal resmi SDGs Indonesia oleh Bappenas</p>
+                
+                <div class="mt-4 p-4 rounded-4 shadow-sm" style="background-color: rgba(25, 135, 84, 0.05);">
+                  <h5 class="fw-bold mb-3">Unduh Materi SDGs</h5>
+                  <a href="#" class="btn btn-outline-primary rounded-pill mb-2 w-100">
+                    <i class="fas fa-file-pdf me-2"></i> Panduan SDGs (PDF)
+                  </a>
+                  <a href="#" class="btn btn-outline-primary rounded-pill w-100">
+                    <i class="fas fa-file-powerpoint me-2"></i> Presentasi SDGs (PPT)
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- FAQ Section -->
+          <div class="row g-5 mb-5 mt-5" id="sdgs-faq">
+            <div class="col-12 text-center mb-4" data-aos="fade-up">
+              <h2 class="fw-bold position-relative d-inline-block gradient-text">
+                Pertanyaan Umum tentang SDGs
+                <div class="position-absolute" style="height: 4px; width: 50%; bottom: -10px; left: 25%; background: linear-gradient(90deg, transparent, #198754, transparent);"></div>
+              </h2>
+              <p class="text-muted mt-3">Jawaban untuk pertanyaan yang sering diajukan tentang Tujuan Pembangunan Berkelanjutan</p>
+            </div>
+            
+            <div class="col-lg-6" data-aos="fade-up">
+              <div class="accordion" id="accordionFAQ1">
+                <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <i class="fas fa-question-circle me-2" style="color: #198754;"></i> Apa perbedaan antara SDGs dan MDGs?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ1">
+                    <div class="accordion-body">
+                      <p class="mb-0">SDGs (Sustainable Development Goals) adalah kelanjutan dari MDGs (Millennium Development Goals) yang berakhir pada tahun 2015. Perbedaan utamanya adalah:</p>
+                      <ul class="mb-0 mt-2">
+                        <li>SDGs memiliki cakupan yang lebih luas (17 tujuan) dibandingkan MDGs (8 tujuan)</li>
+                        <li>SDGs mencakup aspek ekonomi, sosial, dan lingkungan, sementara MDGs lebih fokus pada isu sosial</li>
+                        <li>SDGs berlaku untuk semua negara, sementara MDGs lebih ditujukan untuk negara berkembang</li>
+                        <li>SDGs dikembangkan melalui proses konsultasi yang lebih inklusif dengan melibatkan berbagai pemangku kepentingan</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <i class="fas fa-question-circle me-2" style="color: #198754;"></i> Bagaimana SDGs dibiayai?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ1">
+                    <div class="accordion-body">
+                      <p class="mb-0">Pembiayaan SDGs berasal dari berbagai sumber, termasuk:</p>
+                      <ul class="mb-0 mt-2">
+                        <li>Anggaran nasional dan daerah (APBN dan APBD)</li>
+                        <li>Bantuan pembangunan resmi (Official Development Assistance/ODA)</li>
+                        <li>Investasi swasta dan kemitraan publik-swasta</li>
+                        <li>Filantropi dan sumbangan dari yayasan</li>
+                        <li>Pembiayaan inovatif seperti obligasi hijau (green bonds) dan obligasi sosial</li>
+                        <li>Remitansi dan sumber pembiayaan domestik lainnya</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <i class="fas fa-question-circle me-2" style="color: #198754;"></i> Bagaimana kemajuan SDGs dipantau?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ1">
+                    <div class="accordion-body">
+                      <p>Kemajuan SDGs dipantau melalui beberapa mekanisme:</p>
+                      <ul class="mb-0">
+                        <li>Kerangka indikator global yang terdiri dari 232 indikator unik</li>
+                        <li>Voluntary National Reviews (VNRs) yang dilaporkan oleh negara-negara anggota PBB</li>
+                        <li>High-Level Political Forum on Sustainable Development (HLPF) yang diadakan setiap tahun</li>
+                        <li>Laporan kemajuan SDGs tahunan yang diterbitkan oleh Sekretaris Jenderal PBB</li>
+                        <li>Pemantauan oleh organisasi masyarakat sipil dan lembaga penelitian independen</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="accordion" id="accordionFAQ2">
+                <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <i class="fas fa-question-circle me-2" style="color: #198754;"></i> Apa hubungan antara SDGs dan Perjanjian Paris?
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ2">
+                    <div class="accordion-body">
+                      <p>SDGs dan Perjanjian Paris tentang Perubahan Iklim saling melengkapi dan mendukung. Keduanya diadopsi pada tahun 2015 dan merupakan bagian dari agenda global untuk pembangunan berkelanjutan.</p>
+                      <p class="mb-0">SDG 13 secara khusus berfokus pada aksi penanganan perubahan iklim, yang sejalan dengan tujuan Perjanjian Paris untuk membatasi pemanasan global di bawah 2°C. Selain itu, banyak tujuan SDGs lainnya yang terkait dengan upaya mitigasi dan adaptasi perubahan iklim, seperti energi bersih (SDG 7), kota berkelanjutan (SDG 11), dan konsumsi dan produksi yang bertanggung jawab (SDG 12).</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+                  <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      <i class="fas fa-question-circle me-2" style="color: #198754;"></i> Bagaimana individu dapat berkontribusi pada pencapaian SDGs?
+                    </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionFAQ2">
+                    <div class="accordion-body">
+                      <p>Individu dapat berkontribusi pada pencapaian SDGs melalui berbagai cara:</p>
+                      <ul class="mb-0">
+                        <li>Menerapkan gaya hidup berkelanjutan (mengurangi limbah, menghemat energi, menggunakan transportasi umum)</li>
+                        <li>Membuat pilihan konsumsi yang bertanggung jawab (membeli produk lokal, fair trade, ramah lingkungan)</li>
+                        <li>Berpartisipasi dalam kegiatan sukarela dan komunitas</li>
+                        <li>Menyebarkan kesadaran tentang SDGs kepada orang lain</li>
+                        <li>Mendukung kebijakan dan program yang sejalan dengan SDGs</li>
+                        <li>Berpartisipasi dalam proses pengambilan keputusan di tingkat lokal</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+                  <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      <i class="fas fa-question-circle me-2" style="color: #198754;"></i> Apa peran sektor swasta dalam pencapaian SDGs?
+                    </button>
+                  </h2>
+                  <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionFAQ2">
+                    <div class="accordion-body">
+                      <p>Sektor swasta memiliki peran penting dalam pencapaian SDGs melalui:</p>
+                      <ul class="mb-0">
+                        <li>Investasi dalam inovasi dan teknologi berkelanjutan</li>
+                        <li>Menciptakan lapangan kerja yang layak dan inklusif</li>
+                        <li>Mengadopsi praktik bisnis yang berkelanjutan dan bertanggung jawab</li>
+                        <li>Mengembangkan produk dan layanan yang berkontribusi pada solusi pembangunan berkelanjutan</li>
+                        <li>Bermitra dengan pemerintah dan organisasi masyarakat sipil dalam inisiatif SDGs</li>
+                        <li>Menyediakan sumber daya dan keahlian untuk mendukung implementasi SDGs</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Resources Section -->
+          <div class="row g-5 mb-5" id="sdgs-resources">
+            <div class="col-12 text-center mb-4" data-aos="fade-up">
+              <h2 class="fw-bold position-relative d-inline-block gradient-text">
+                Sumber Daya SDGs
+                <div class="position-absolute" style="height: 4px; width: 50%; bottom: -10px; left: 25%; background: linear-gradient(90deg, transparent, #198754, transparent);"></div>
+              </h2>
+              <p class="text-muted mt-3">Kumpulan sumber daya untuk mempelajari lebih lanjut tentang Tujuan Pembangunan Berkelanjutan</p>
+            </div>
+            
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0 gradient-bg-animate">
+                  <h4 class="text-white mb-0"><i class="fas fa-globe me-2"></i> Situs Web Resmi</h4>
+                </div>
+                <div class="card-body p-4">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-0 py-3 border-dashed">
+                      <a href="https://sdgs.un.org/" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                          <i class="fas fa-external-link-alt" style="color: #198754;"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">SDGs PBB</h6>
+                          <p class="small text-muted mb-0">Situs resmi SDGs oleh Perserikatan Bangsa-Bangsa</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="list-group-item px-0 py-3 border-dashed">
+                      <a href="https://sdgs.bappenas.go.id/" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                          <i class="fas fa-external-link-alt" style="color: #198754;"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">SDGs Indonesia</h6>
+                          <p class="small text-muted mb-0">Portal resmi SDGs Indonesia oleh Bappenas</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="list-group-item px-0 py-3 border-dashed">
+                      <a href="https://www.undp.org/sustainable-development-goals" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                          <i class="fas fa-external-link-alt" style="color: #198754;"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">UNDP SDGs</h6>
+                          <p class="small text-muted mb-0">Sumber daya SDGs oleh United Nations Development Programme</p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0 gradient-bg-animate">
+                  <h4 class="text-white mb-0"><i class="fas fa-book me-2"></i> Publikasi & Laporan</h4>
+                </div>
+                <div class="card-body p-4">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-0 py-3 border-dashed">
+                      <a href="https://unstats.un.org/sdgs/report/2023/" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                          <i class="fas fa-file-pdf" style="color: #198754;"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">Laporan SDGs 2023</h6>
+                          <p class="small text-muted mb-0">Laporan tahunan tentang kemajuan pencapaian SDGs secara global</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="list-group-item px-0 py-3 border-dashed">
+                      <a href="https://sdgindex.org/" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                          <i class="fas fa-chart-bar" style="color: #198754;"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">SDG Index</h6>
+                          <p class="small text-muted mb-0">Indeks dan dasbor untuk melacak kemajuan SDGs di berbagai negara</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="list-group-item px-0 py-3 border-dashed">
+                      <a href="https://www.sdgreport.org/" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                          <i class="fas fa-file-alt" style="color: #198754;"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">Sustainable Development Report</h6>
+                          <p class="small text-muted mb-0">Laporan tahunan yang menyajikan data terbaru tentang implementasi SDGs</p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="card border-0 shadow-lg h-100 position-relative overflow-hidden sdg-card">
+                <div class="card-header p-4 border-0 gradient-bg-animate">
+                  <h4 class="text-white mb-0"><i class="fas fa-tools me-2"></i> Alat & Sumber Belajar</h4>
+                </div>
+                <div class="card-body p-4">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-0 py-3 border-dashed">
+                      <a href="https://sdgacademy.org/" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                          <i class="fas fa-graduation-cap" style="color: #198754;"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">SDG Academy</h6>
+                          <p class="small text-muted mb-0">Platform pendidikan online gratis tentang pembangunan berkelanjutan</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="list-group-item px-0 py-3 border-dashed">
+                      <a href="https://www.globalgoals.org/" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                          <i class="fas fa-bullhorn" style="color: #198754;"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">The Global Goals</h6>
+                          <p class="small text-muted mb-0">Sumber daya komunikasi dan kampanye untuk SDGs</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="list-group-item px-0 py-3 border-dashed">
+                      <a href="https://www.un.org/sustainabledevelopment/sdg-toolkit/" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; background-color: rgba(25, 135, 84, 0.1);">
+                          <i class="fas fa-toolbox" style="color: #198754;"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">SDGs Toolkit</h6>
+                          <p class="small text-muted mb-0">Kumpulan alat dan sumber daya untuk komunikasi dan implementasi SDGs</p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main Content End -->
+
+       <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5 px-lg-5">
+        <div class="row gy-5 gx-4 pt-5">
+          <div class="col-lg-5 col-md-12">
+            <div class="row gy-5 g-4">
+              <div class="col-md-6">
+                <h5 class="fw-bold text-white mb-4">Menu</h5>
+                <a class="btn btn-link active" href="about.html">About Us</a>
+                <a class="btn btn-link" href="sistem.html">Sistem Pertahanan dan keamanan</a>
+                <a class="btn btn-link" href="hi.html">Hubungan Internasional</a>
+                <a class="btn btn-link" href="nilai.html">Nilai Pancasila</a>
+                <a class="btn btn-link" href="sdgs.html">SDGs</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h5 class="fw-bold text-white mb-4">Get In Touch</h5>
+            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Jl. Jenggolo No.2 A, Bedrek, Siwalanpanji, Kec.
+              Buduran, Kabupaten Sidoarjo, Jawa Timur 61219</p>
+            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>031 8964 034</p>
+            <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@smkn2buduran.sch.id</p>
+            <div class="d-flex pt-2">
+              <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@SMKN2BUDURAN"><i
+                  class="fab fa-youtube"></i></a>
+              <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/x.xxerpeel/?hl=en"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container px-lg-5">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&copy; <a class="border-bottom"
+                href="#">Kelompok 5</a>, All Right Reserved.</div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Home</a>
+                <a href="">Cookies</a>
+                <a href="">Help</a>
+                <a href="">FQAs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/aos/aos.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+      
+      // Counter Up
+      $('[data-toggle="counter-up"]').each(function () {
+        $(this).prop('Counter', 0).animate({
+          Counter: $(this).text()
+        }, {
+          duration: 2000,
+          easing: 'swing',
+          step: function (now) {
+            $(this).text(Math.ceil(now));
+          }
+        });
+      });
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Add gradient background animation
+      const gradientBgElements = document.querySelectorAll('.gradient-bg-animate');
+      gradientBgElements.forEach(element => {
+        element.style.background = 'linear-gradient(-45deg, #198754, #0d6efd, #198754, #0d6efd)';
+        element.style.backgroundSize = '400% 400%';
+        element.style.animation = 'gradient 15s ease infinite';
+      });
+      
+      // Add keyframes for gradient animation
+      if (!document.querySelector('#gradient-keyframes')) {
+        const style = document.createElement('style');
+        style.id = 'gradient-keyframes';
+        style.innerHTML = `
+          @keyframes gradient {
+            0% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+            100% {
+              background-position: 0% 50%;
+            }
+          }
+          
+          .animated-icon {
+            animation: pulse 2s infinite;
+          }
+          
+          @keyframes pulse {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.2);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          
+          .border-dashed {
+            border-bottom: 1px dashed rgba(0,0,0,0.1) !important;
+          }
+          
+          .btn-3d {
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          }
+          
+          .btn-3d:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+          }
+          
+          .gradient-bg-animate {
+            background: linear-gradient(-45deg, #198754, #0d6efd, #198754, #0d6efd);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+          }
+          
+          .highlight-box {
+            border-left: 4px solid #198754;
+            padding-left: 1rem;
+            background-color: rgba(25, 135, 84, 0.05);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+          }
+        `;
+        document.head.appendChild(style);
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+

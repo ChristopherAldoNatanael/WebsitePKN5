@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hubungan Internasional</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="images/garuda1.png" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      /* Base Styles with White Background and Green Accents */
+      :root {
+        --primary: #198754;
+        --primary-light: #2f9d44;
+        --primary-dark: #146c43;
+        --primary-transparent: rgba(25, 135, 84, 0.1);
+        --white: #ffffff;
+        --light-gray: #f8f9fa;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+      }
+
+      .bg-gradient-text {
+        background-size: 200% auto; /* Ukuran latar belakang diatur dua kali lebar */
+        background-image: linear-gradient(45deg, var(--primary-light), var(--primary), var(--primary-light)); /* Gradien latar belakang */
+        -webkit-background-clip: text; /* Memotong latar belakang ke teks (untuk WebKit) */
+        background-clip: text; /* Memotong latar belakang ke teks (untuk browser lain) */
+        -webkit-text-fill-color: transparent; /* Mengisi warna teks menjadi transparan (untuk WebKit) */
+        animation: gradientMove 4s ease infinite; /* Menambahkan animasi gradien */
+      }
+
+      /* Definisikan animasi gradientMove */
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%; /* Posisi awal latar belakang */
+        }
+        100% {
+          background-position: 100% 50%; /* Posisi akhir latar belakang */
+        }
+      }
+
+      /* Animated Underline */
+      .animated-underline {
+        position: relative;
+        width: 0;
+        height: 3px;
+        background-color: var(--primary);
+        margin: 8px auto 0;
+        animation: lineExpand 1.5s ease-out forwards;
+      }
+
+      @keyframes lineExpand {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 80px;
+        }
+      }
+
+      /* Card Animations */
+      .card {
+        transition: all 0.5s ease;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(25, 135, 84, 0.15);
+      }
+
+      /* Card Headers with Gradient Hover Effect */
+      .card-header {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .card-header:after {
+        content: "";
+        position: absolute;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(25, 135, 84, 0.05), transparent);
+        transition: all 0.8s ease;
+        z-index: -1;
+      }
+
+      .card:hover .card-header:after {
+        left: 100%;
+        animation: shimmer 2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* Concept Items Animation */
+      .concept-item {
+        transition: all 0.4s ease;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .concept-item:hover {
+        background-color: var(--primary-transparent);
+        transform: translateX(10px);
+      }
+
+      .concept-icon {
+        transition: all 0.4s ease;
+      }
+
+      .concept-item:hover .concept-icon {
+        transform: rotate(15deg) scale(1.1);
+      }
+
+      /* Timeline Animation */
+      .timeline-container {
+        position: relative;
+        padding: 20px 0;
+      }
+
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: var(--primary);
+        transform: translateX(-50%);
+      }
+
+      .timeline-line::before,
+      .timeline-line::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        transform: translateX(-50%);
+      }
+
+      .timeline-line::before {
+        top: 0;
+        animation: pulseTimeline 2s infinite;
+      }
+
+      .timeline-line::after {
+        bottom: 0;
+        animation: pulseTimeline 2s infinite 1s;
+      }
+
+      @keyframes pulseTimeline {
+        0% {
+          transform: translateX(-50%) scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: translateX(-50%) scale(1.5);
+          opacity: 0.5;
+        }
+        100% {
+          transform: translateX(-50%) scale(1);
+          opacity: 1;
+        }
+      }
+
+      .timeline-content {
+        transition: all 0.4s ease;
+        position: relative;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(25, 135, 84, 0.1);
+      }
+
+      /* Animated Number Circles */
+      .reason-number span {
+        transition: all 0.3s ease;
+      }
+
+      .reason-item:hover .reason-number span {
+        transform: scale(1.2);
+        box-shadow: 0 0 15px rgba(25, 135, 84, 0.5);
+      }
+
+      /* Wow Animation Enhancements */
+      .wow {
+        visibility: hidden;
+      }
+
+      /* Custom Animations */
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Button Styles with Animation */
+      .btn-primary,
+      .btn-secondary {
+        background-image: linear-gradient(to right, var(--primary) 0%, var(--primary-light) 51%, var(--primary) 100%);
+        background-size: 200% auto;
+        transition: 0.5s;
+        border: none;
+        box-shadow: 0 5px 15px rgba(25, 135, 84, 0.2);
+      }
+
+      .btn-primary:hover,
+      .btn-secondary:hover {
+        background-position: right center;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(25, 135, 84, 0.3);
+      }
+
+      /* Back to Top Button Animation */
+      .back-to-top {
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease;
+        animation: bounce 2s infinite;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      /* Video Play Button Animation */
+      .position-absolute i.fa-play {
+        transition: all 0.3s ease;
+      }
+
+      .position-absolute:hover i.fa-play {
+        transform: scale(1.2);
+        color: var(--primary-dark) !important;
+      }
+
+      .position-absolute:hover .bg-white {
+        box-shadow: 0 0 30px rgba(25, 135, 84, 0.4);
+      }
+
+      /* Footer Animations */
+      .footer {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer::before {
+        /* content: ''; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, var(--primary-light), var(--primary), var(--primary-light));
+        background-size: 200% auto;
+        animation: gradientMove 4s ease infinite;
+      }
+
+      .footer-menu a {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .footer-menu a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--white);
+        transition: all 0.3s ease;
+      }
+
+      .footer-menu a:hover::after {
+        width: 100%;
+      }
+
+      /* Social Media Buttons Animation */
+      .btn-social {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .btn-social::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--white);
+        transform: scale(0);
+        transition: all 0.5s ease;
+        border-radius: 50%;
+      }
+
+      .btn-social:hover::before {
+        transform: scale(1);
+      }
+
+      .btn-social i {
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .btn-social:hover i {
+        color: var(--primary) !important;
+      }
+
+      /* Loading Animation */
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .loader-inner {
+        width: 80px;
+        height: 80px;
+        position: relative;
+      }
+
+      .loader-circle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 5px solid transparent;
+        border-top-color: var(--primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      .loader-circle:nth-child(2) {
+        width: 60px;
+        height: 60px;
+        top: 10px;
+        left: 10px;
+        border-top-color: var(--primary-light);
+        animation: spin 1.5s linear infinite reverse;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive Design Adjustments */
+      @media (max-width: 992px) {
+        .timeline-line {
+          left: 20px;
+        }
+
+        .timeline-content {
+          margin-left: 40px;
+        }
+
+        .col-md-6.text-md-end {
+          text-align: left !important;
+        }
+
+        .pe-md-4,
+        .ps-md-4 {
+          padding-left: 40px !important;
+          padding-right: 15px !important;
+        }
+      }
+
+      /* Animated List Items Effect */
+      .animated-list .concept-item,
+      .reason-item {
+        opacity: 0;
+        transform: translateY(20px);
+        animation-fill-mode: forwards;
+      }
+
+      /* Typing Effect for Headers */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      h1.typing-effect {
+        overflow: hidden;
+        border-right: 3px solid var(--primary);
+        white-space: nowrap;
+        margin: 0 auto;
+        animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: var(--primary);
+        }
+      }
+
+      /* Hover Glow Effect for Icons */
+      .concept-icon div,
+      .reason-number span {
+        position: relative;
+      }
+
+      .concept-icon div::after,
+      .reason-number span::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      .concept-item:hover .concept-icon div::after,
+      .reason-item:hover .reason-number span::after {
+        box-shadow: 0 0 0 10px rgba(25, 135, 84, 0);
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(25, 135, 84, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(25, 135, 84, 0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-xxl bg-white p-0">
+      <!-- Spinner Start -->
+      <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar & Hero Start -->
+      <div class="container-xxl position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+          <a href="" class="navbar-brand p-0">
+            <img src="images/garuda1.png" alt="Logo" style="height: 70px; margin-right: 10px" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+              <a href="index.html" class="nav-item nav-link">Beranda</a>
+              <a href="about.html" class="nav-item nav-link">Tentang</a>
+              <a href="sistem.html" class="nav-item nav-link">Sistem pertahanan</a>
+              <a href="hi.html" class="nav-item nav-link active">Hubungan Internasional</a>
+              <a href="nilai.html" class="nav-item nav-link">Nilai Pancasila</a>
+              <a href="sdgs.html" class="nav-item nav-link">SDGS</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container-xxl py-5 bg-primary hero-header mb-5">
+          <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 pt-5">
+              <div class="col-12 text-center text-lg-start">
+                <h1 class="display-4 text-white animated slideInLeft">Hubungan Internasional</h1>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center justify-content-lg-start animated slideInLeft">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar & Hero End -->
+
+      <!-- International Relations Section Start -->
+      <div class="container-xxl py-5">
+        <div class="container px-lg-5">
+          <!-- Animated Main Header -->
+          <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px">
+            <h1 class="mb-3 position-relative">
+              <span class="bg-gradient-text" style="background-image: linear-gradient(45deg, #2f9d44, #198754); -webkit-text-fill-color: transparent">Memahami Hubungan Internasional</span>
+              <div class="animated-underline"></div>
+            </h1>
+            <p class="mb-1 fs-5 fw-light">
+              Hubungan internasional adalah bidang kajian yang mempelajari interaksi antar negara dalam sistem global, mencakup diplomasi, politik luar negeri, keamanan, ekonomi, dan isu-isu transnasional untuk memperkuat posisi Indonesia di kancah dunia.
+            </p>
+          </div>
+
+          <!-- Main Content with Animated Cards -->
+          <div class="row g-4 mb-5">
+            <!-- Left Side - Key Concepts -->
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+              <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header border-0 bg-white pt-4 pb-0">
+                  <h3 class="fw-bold text-center" style="color: #198754">Konsep Utama dalam Hubungan Internasional</h3>
+                  <div class="mx-auto" style="width: 50px; height: 3px; background-color: #198754"></div>
+                </div>
+                <div class="card-body p-4">
+                  <div class="animated-list">
+                    <div class="concept-item d-flex align-items-center mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="concept-icon me-4">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background-color: rgba(25, 135, 84, 0.1)">
+                          <i class="fas fa-handshake fa-2x" style="color: #198754"></i>
+                        </div>
+                      </div>
+                      <div class="concept-text">
+                        <h5 class="mb-1">Politik Luar Negeri Bebas Aktif</h5>
+                        <p class="mb-0 text-muted">Prinsip dasar Indonesia dalam hubungan internasional yang tidak memihak blok kekuatan manapun dan aktif memperjuangkan perdamaian dunia</p>
+                      </div>
+                    </div>
+
+                    <div class="concept-item d-flex align-items-center mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                      <div class="concept-icon me-4">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background-color: rgba(25, 135, 84, 0.1)">
+                          <i class="fas fa-shield-alt fa-2x" style="color: #198754"></i>
+                        </div>
+                      </div>
+                      <div class="concept-text">
+                        <h5 class="mb-1">Diplomasi Multi-jalur</h5>
+                        <p class="mb-0 text-muted">Pendekatan diplomasi yang melibatkan berbagai aktor seperti pemerintah, swasta, akademisi, dan masyarakat sipil dalam mencapai kepentingan nasional</p>
+                      </div>
+                    </div>
+
+                    <div class="concept-item d-flex align-items-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                      <div class="concept-icon me-4">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background-color: rgba(25, 135, 84, 0.1)">
+                          <i class="fas fa-chart-line fa-2x" style="color: #198754"></i>
+                        </div>
+                      </div>
+                      <div class="concept-text">
+                        <h5 class="mb-1">Kerja Sama Ekonomi Strategis</h5>
+                        <p class="mb-0 text-muted">Pengembangan hubungan ekonomi melalui perjanjian perdagangan, investasi, dan kerja sama pembangunan untuk mendukung pertumbuhan ekonomi nasional</p>
+                      </div>
+                    </div>
+
+                    <div class="concept-item d-flex align-items-center mb-4 wow fadeInUp" data-wow-delay="0.4s">
+                      <div class="concept-icon me-4">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background-color: rgba(25, 135, 84, 0.1)">
+                          <i class="fas fa-users fa-2x" style="color: #198754"></i>
+                        </div>
+                      </div>
+                      <div class="concept-text">
+                        <h5 class="mb-1">Diplomasi Kemanusiaan</h5>
+                        <p class="mb-0 text-muted">Upaya Indonesia dalam memperjuangkan nilai-nilai kemanusiaan dan HAM di forum internasional, termasuk bantuan kemanusiaan dan perlindungan WNI di luar negeri</p>
+                      </div>
+                    </div>
+
+                    <div class="concept-item d-flex align-items-center wow fadeInUp" data-wow-delay="0.5s">
+                      <div class="concept-icon me-4">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background-color: rgba(25, 135, 84, 0.1)">
+                          <i class="fas fa-globe-asia fa-2x" style="color: #198754"></i>
+                        </div>
+                      </div>
+                      <div class="concept-text">
+                        <h5 class="mb-1">Diplomasi Iklim</h5>
+                        <p class="mb-0 text-muted">Peran aktif Indonesia dalam negosiasi perubahan iklim global, termasuk komitmen pada Perjanjian Paris dan upaya mencapai net zero emission</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side - Why IR in NKRI -->
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+              <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header border-0 bg-white pt-4 pb-0">
+                  <h3 class="fw-bold text-center" style="color: #198754">Hubungan Internasional dalam NKRI</h3>
+                  <div class="mx-auto" style="width: 50px; height: 3px; background-color: #198754"></div>
+                </div>
+                <div class="card-body p-4">
+                  <div class="position-relative mb-4">
+                    <img src="images/HI.png" alt="Hubungan Internasional" class="img-fluid rounded-3 mb-3 wow fadeIn" data-wow-delay="0.3s" onerror="this.src='https://via.placeholder.com/600x300/198754/FFFFFF?text=Hubungan+Internasional+Indonesia'" />
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                    </div>
+                  </div>
+
+                  <div class="why-ir-content">
+                    <h4 class="mb-3 fw-bold" style="color: #198754">Mengapa Hubungan Internasional Penting bagi NKRI?</h4>
+
+                    <div class="reason-item d-flex mb-3 wow fadeInUp" data-wow-delay="0.2s">
+                      <div class="reason-number me-3">
+                        <span class="d-flex align-items-center justify-content-center rounded-circle fw-bold" style="width: 30px; height: 30px; background-color: #198754; color: white">1</span>
+                      </div>
+                      <div>
+                        <h6 class="fw-bold mb-1">Perlindungan Kedaulatan Nasional</h6>
+                        <p class="text-muted">Memperkuat pengakuan internasional terhadap kedaulatan NKRI dan integritas wilayah, termasuk perbatasan darat, laut, dan udara</p>
+                      </div>
+                    </div>
+
+                    <div class="reason-item d-flex mb-3 wow fadeInUp" data-wow-delay="0.3s">
+                      <div class="reason-number me-3">
+                        <span class="d-flex align-items-center justify-content-center rounded-circle fw-bold" style="width: 30px; height: 30px; background-color: #198754; color: white">2</span>
+                      </div>
+                      <div>
+                        <h6 class="fw-bold mb-1">Penguatan Ekonomi Nasional</h6>
+                        <p class="text-muted">Membuka akses pasar global, menarik investasi asing, dan meningkatkan daya saing produk Indonesia di pasar internasional</p>
+                      </div>
+                    </div>
+
+                    <div class="reason-item d-flex mb-3 wow fadeInUp" data-wow-delay="0.4s">
+                      <div class="reason-number me-3">
+                        <span class="d-flex align-items-center justify-content-center rounded-circle fw-bold" style="width: 30px; height: 30px; background-color: #198754; color: white">3</span>
+                      </div>
+                      <div>
+                        <h6 class="fw-bold mb-1">Stabilitas Keamanan Regional</h6>
+                        <p class="text-muted">Membangun kerja sama pertahanan dan keamanan untuk menangani ancaman transnasional seperti terorisme, kejahatan siber, dan perdagangan ilegal</p>
+                      </div>
+                    </div>
+                    
+                    <div class="reason-item d-flex wow fadeInUp" data-wow-delay="0.5s">
+                      <div class="reason-number me-3">
+                        <span class="d-flex align-items-center justify-content-center rounded-circle fw-bold" style="width: 30px; height: 30px; background-color: #198754; color: white">4</span>
+                      </div>
+                      <div>
+                        <h6 class="fw-bold mb-1">Peningkatan Peran Global</h6>
+                        <p class="text-muted">Memperkuat posisi Indonesia sebagai middle power yang berpengaruh dalam tata kelola global melalui forum multilateral seperti G20, ASEAN, dan PBB</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Timeline Section -->
+          <div class="row wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-12">
+              <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header border-0 bg-white pt-4 pb-0">
+                  <h3 class="fw-bold text-center" style="color: #198754">Tonggak Penting Hubungan Internasional Indonesia</h3>
+                  <div class="mx-auto mb-3" style="width: 50px; height: 3px; background-color: #198754"></div>
+                </div>
+                <div class="card-body p-4">
+                  <div class="timeline-container position-relative">
+                    <div class="timeline-line position-absolute" style="top: 0; bottom: 0; left: 50%; width: 2px; background-color: #198754"></div>
+
+                    <!-- Timeline Items -->
+                    <div class="row g-0 mb-4">
+                      <div class="col-md-6 text-md-end pe-md-4 wow fadeInLeft" data-wow-delay="0.1s">
+                        <div class="timeline-content p-3 rounded-3 shadow-sm border-start border-5" style="border-color: #198754 !important; background-color: rgba(25, 135, 84, 0.05)">
+                          <h5 class="fw-bold">17 Agustus 1945</h5>
+                          <p class="mb-0">Proklamasi Kemerdekaan Indonesia menjadi titik awal perjuangan diplomasi untuk mendapatkan pengakuan internasional sebagai negara berdaulat.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6"></div>
+                    </div>
+
+                    <div class="row g-0 mb-4">
+                      <div class="col-md-6"></div>
+                      <div class="col-md-6 ps-md-4 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="timeline-content p-3 rounded-3 shadow-sm border-start border-5" style="border-color: #198754 !important; background-color: rgba(25, 135, 84, 0.05)">
+                          <h5 class="fw-bold">18-24 April 1955</h5>
+                          <p class="mb-0">
+                            Konferensi Asia-Afrika di Bandung menjadi momentum bersejarah yang melahirkan Dasasila Bandung dan semangat solidaritas negara-negara Asia-Afrika dalam melawan kolonialisme dan imperialisme.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row g-0 mb-4">
+                      <div class="col-md-6 text-md-end pe-md-4 wow fadeInLeft" data-wow-delay="0.3s">
+                        <div class="timeline-content p-3 rounded-3 shadow-sm border-start border-5" style="border-color: #198754 !important; background-color: rgba(25, 135, 84, 0.05)">
+                          <h5 class="fw-bold">8 Agustus 1967</h5>
+                          <p class="mb-0">Pendirian ASEAN melalui Deklarasi Bangkok yang ditandatangani oleh lima negara pendiri: Indonesia, Malaysia, Filipina, Singapura, dan Thailand, menjadi landasan kerja sama regional di Asia Tenggara.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6"></div>
+                    </div>
+
+                    <div class="row g-0 mb-4">
+                      <div class="col-md-6"></div>
+                      <div class="col-md-6 ps-md-4 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="timeline-content p-3 rounded-3 shadow-sm border-start border-5" style="border-color: #198754 !important; background-color: rgba(25, 135, 84, 0.05)">
+                          <h5 class="fw-bold">1994-1995</h5>
+                          <p class="mb-0">Indonesia menjadi tuan rumah KTT APEC di Bogor yang menghasilkan Bogor Goals, visi perdagangan dan investasi bebas dan terbuka di kawasan Asia-Pasifik pada tahun 2020.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row g-0 mb-4">
+                      <div class="col-md-6 text-md-end pe-md-4 wow fadeInLeft" data-wow-delay="0.5s">
+                        <div class="timeline-content p-3 rounded-3 shadow-sm border-start border-5" style="border-color: #198754 !important; background-color: rgba(25, 135, 84, 0.05)">
+                          <h5 class="fw-bold">2022</h5>
+                          <p class="mb-0">Indonesia menjadi Presidensi G20 dengan tema "Recover Together, Recover Stronger" dan berhasil menghasilkan Deklarasi Bali yang disepakati oleh semua anggota di tengah ketegangan geopolitik global.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6"></div>
+                    </div>
+
+                    <div class="row g-0">
+                      <div class="col-md-6"></div>
+                      <div class="col-md-6 ps-md-4 wow fadeInRight" data-wow-delay="0.6s">
+                        <div class="timeline-content p-3 rounded-3 shadow-sm border-start border-5" style="border-color: #198754 !important; background-color: rgba(25, 135, 84, 0.05)">
+                          <h5 class="fw-bold">2023-2024</h5>
+                          <p class="mb-0">Indonesia menjadi Ketua ASEAN 2023 dengan tema "ASEAN Matters: Epicentrum of Growth" dan terus memperkuat perannya dalam isu-isu global seperti transisi energi dan transformasi digital.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Start -->
+      <div class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5 px-lg-5">
+          <div class="row gy-5 gx-4 pt-5">
+            <div class="col-lg-5 col-md-12">
+              <div class="row gy-5 g-4">
+                <div class="col-md-6">
+                  <h5 class="fw-bold text-white mb-4">Menu</h5>
+                  <a class="btn btn-link" href="about.html">About Us</a>
+                  <a class="btn btn-link" href="sistem.html">Sistem Pertahanan dan keamanan</a>
+                  <a class="btn btn-link active" href="hi.html">Hubungan Internasional</a>
+                  <a class="btn btn-link" href="nilai.html">Nilai Pancasila</a>
+                  <a class="btn btn-link" href="sdgs.html">SDGs</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <h5 class="fw-bold text-white mb-4">Get In Touch</h5>
+              <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Jl. Jenggolo No.2 A, Bedrek, Siwalanpanji, Kec. Buduran, Kabupaten Sidoarjo, Jawa Timur 61219</p>
+              <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>031 8964 034</p>
+              <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@smkn2buduran.sch.id</p>
+              <div class="d-flex pt-2">
+                <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@SMKN2BUDURAN"><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/x.xxerpeel/?hl=en"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-lg-5">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&copy; <a class="border-bottom" href="#">Kelompok 5</a>, All Right Reserved.</div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                  <a href="">Home</a>
+                  <a href="">Cookies</a>
+                  <a href="">Help</a>
+                  <a href="">FQAs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer End -->
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <div src="https://code.jquery.com/jquery-3.4.1.min.js"></div>
+    <!-- JavaScript Libraries -->
+    <!-- Perbaikan: Menghapus div yang salah dan memperbaiki urutan script -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+      // Perbaikan: Menambahkan penanganan error dan timeout untuk spinner
+      document.addEventListener("DOMContentLoaded", function() {
+        // Menghilangkan spinner setelah halaman dimuat
+        const spinner = document.getElementById("spinner");
+        if (spinner) {
+          spinner.classList.remove("show");
+          setTimeout(() => {
+            spinner.style.display = "none";
+          }, 500);
+        }
+      });
+
+      // Perbaikan: Menambahkan timeout untuk menghilangkan spinner jika terlalu lama
+      setTimeout(function() {
+        const spinner = document.getElementById("spinner");
+        if (spinner && spinner.classList.contains("show")) {
+          spinner.classList.remove("show");
+          spinner.style.display = "none";
+          console.log("Spinner dihilangkan karena timeout");
+        }
+      }, 5000); // Menghilangkan spinner setelah 5 detik
+
+      // Perbaikan: Menangani error loading gambar
+      document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll("img");
+        images.forEach(img => {
+          img.addEventListener("error", function() {
+            if (!this.getAttribute("data-error-handled")) {
+              this.setAttribute("data-error-handled", "true");
+              if (!this.getAttribute("onerror")) {
+                this.src = "https://via.placeholder.com/600x300/198754/FFFFFF?text=Image+Not+Found";
+              }
+            }
+          });
+        });
+      });
+
+      // Perbaikan: Inisialisasi WOW.js dengan benar
+      document.addEventListener("DOMContentLoaded", function() {
+        try {
+          new WOW().init();
+        } catch (e) {
+          console.error("Error initializing WOW.js:", e);
+        }
+      });
+    </script>
+  </body>
+</html>

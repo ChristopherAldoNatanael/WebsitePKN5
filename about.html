@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>PKN - About</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
+
+  <!-- Favicon -->
+  <link href="images/garuda1.png" rel="icon" />
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+
+  <!-- Wave Effect Style -->
+  <style>
+    .container-xxl.bg-primary.hero-header {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wave-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 70px;
+    }
+
+    @media (max-width: 768px) {
+      .wave {
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-xxl bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-xxl position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+          <img src="images/garuda1.png" alt="Logo" style="height: 70px; margin-right: 10px" />
+          <!-- <h1 class="m-0 d-inline-block align-middle">Garuda</h1> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Beranda</a>
+            <a href="about.html" class="nav-item nav-link active">Tentang</a>
+            <a href="sistem.html" class="nav-item nav-link">Sistem pertahanan</a>
+            <a href="hi.html" class="nav-item nav-link">Hubungan Internasional</a>
+            <a href="nilai.html" class="nav-item nav-link">Nilai pancasila</a>
+            <a href="sdgs.html" class="nav-item nav-link">SDGS</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-xxl py-5 bg-primary hero-header mb-5">
+        <div class="container my-5 py-5 px-lg-5">
+          <div class="row g-5 pt-5">
+            <div class="col-12 text-center text-lg-start">
+              <h1 class="display-4 text-white animated slideInLeft">About Us</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center justify-content-lg-start animated slideInLeft">
+                  <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                  <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!-- Add the wave container here -->
+        <div class="wave-container">
+          <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#ffffff" fill-opacity="1"
+              d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(29, 40, 51, 0.8)">
+          <div class="modal-header border-0">
+            <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body d-flex align-items-center justify-content-center">
+            <div class="input-group" style="max-width: 600px">
+              <input type="text" class="form-control bg-transparent border-light p-3"
+                placeholder="Type search keyword" />
+              <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+      <div class="container px-lg-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="section-title position-relative mb-4 pb-4">
+              <h1 class="mb-2">Welcome to Kelompok 5</h1>
+            </div>
+            <p class="mb-4">
+              Selamat datang di presentasi kami. Kami adalah siswa Kelas 10 RPL (Rekayasa Perangkat Lunak) di SMKN 2
+              Buduran Sidoarjo yang akan mempresentasikan mengenai 3 konsep penting NKRI. Presentasi ini bertujuan untuk
+              memberikan
+              pemahaman mendalam tentang nilai-nilai fundamental yang memperkuat Negara Kesatuan Republik Indonesia.
+            </p>
+            <div class="row g-4">
+              <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+                <div class="bg-light rounded text-center p-4 shadow-sm h-100 d-flex flex-column justify-content-center">
+                  <div
+                    class="rounded-circle bg-primary d-inline-flex align-items-center justify-content-center mx-auto mb-3"
+                    style="width: 65px; height: 65px">
+                    <i class="fa fa-shield-alt fa-2x text-white"></i>
+                  </div>
+                  <h4 class="mb-0 fw-bold">Sistem Pertahanan dan Keamanan</h4>
+                </div>
+              </div>
+              <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                <div class="bg-light rounded text-center p-4 shadow-sm h-100 d-flex flex-column justify-content-center">
+                  <div
+                    class="rounded-circle bg-primary d-inline-flex align-items-center justify-content-center mx-auto mb-3"
+                    style="width: 65px; height: 65px">
+                    <i class="fa fa-globe-asia fa-2x text-white"></i>
+                  </div>
+                  <h4 class="mb-0 fw-bold">Hubungan Internasional</h4>
+                </div>
+              </div>
+              <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+                <div class="bg-light rounded text-center p-4 shadow-sm h-100 d-flex flex-column justify-content-center">
+                  <div
+                    class="rounded-circle bg-primary d-inline-flex align-items-center justify-content-center mx-auto mb-3"
+                    style="width: 65px; height: 65px">
+                    <i class="fa fa-star fa-2x text-white"></i>
+                  </div>
+                  <h4 class="mb-0 fw-bold">Nilai Pancasila dalam Pembangunan</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 wow zoomIn" data-wow-delay="0.5s">
+            <img class="img-fluid" src="images/kartunindo1.png" alt="NKRI Concepts" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+      <div class="container px-lg-5">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s"
+          style="max-width: 600px">
+          <h1 class="mb-3">Our Team Members</h1>
+          <!-- <p class="mb-1">Vero justo sed sed vero clita amet. Et justo vero sea diam elitr amet ipsum eos ipsum clita duo sed. Sed vero sea diam erat vero elitr sit clita.</p> -->
+        </div>
+        <div class="row g-4">
+          <!-- First Row - Original 4 Team Members -->
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+              <div class="text-center p-4">
+                <div class="image-container mx-auto mb-4"
+                  style="width: 150px; height: 150px; overflow: hidden; border-radius: 50%;">
+                  <img class="img-fluid" src="img/aldo.jpeg" alt="Christopher Aldo"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+                </div>
+                <h5 class="fw-bold mb-1">Christopher Aldo Natanael</h5>
+                <small>Web Development</small> <br />
+                <small>Game Development</small><br />
+                <small>Presentasi</small>
+              </div>
+              <div class="d-flex justify-content-center bg-primary p-3">
+                <a class="btn btn-square text-primary bg-white m-1" href="https://www.instagram.com/christopher.aldoo/"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+              <div class="text-center p-4">
+                <div class="image-container mx-auto mb-4"
+                  style="width: 150px; height: 150px; overflow: hidden; border-radius: 50%;">
+                  <img class="img-fluid" src="img/angga.jpeg" alt="Priyo Anggodho"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+                </div>
+                <h5 class="fw-bold mb-1">Priyo Anggodho Arifin Putra</h5>
+                <small>Web Development</small> <br />
+                <small>Game Development</small>
+                <small>Presentasi</small><br />
+              </div>
+              <div class="d-flex justify-content-center bg-primary p-3">
+                <a class="btn btn-square text-primary bg-white m-1" href="https://www.instagram.com/iyowkkk/"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+              <div class="text-center p-4">
+                <div class="image-container mx-auto mb-4"
+                  style="width: 150px; height: 150px; overflow: hidden; border-radius: 50%;">
+                  <img class="img-fluid" src="img/rafid.jpeg" alt="Rafid Syaakir"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+                </div>
+                <h5 class="fw-bold mb-1">Much. Rafid Syaakir</h5>
+                <small>Makalah</small><br />
+                <small>Presentasi</small>
+              </div>
+              <div class="d-flex justify-content-center bg-primary p-3">
+                <a class="btn btn-square text-primary bg-white m-1" href="https://www.instagram.com/rapitttd/"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+              <div class="text-center p-4">
+                <div class="image-container mx-auto mb-4"
+                  style="width: 150px; height: 150px; overflow: hidden; border-radius: 50%;">
+                  <img class="img-fluid" src="img/raya.jpeg" alt="Daffa Athaya"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+                </div>
+                <h5 class="fw-bold mb-1">Daffa Athaya Aurora</h5>
+                <small>Mading</small><br />
+                <small>Presentasi</small>
+
+              </div>
+              <div class="d-flex justify-content-center bg-primary p-3">
+                <a class="btn btn-square text-primary bg-white m-1" href="https://www.instagram.com/rayefth/"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Row - Additional 4 Team Members -->
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+              <div class="text-center p-4">
+                <div class="image-container mx-auto mb-4"
+                  style="width: 150px; height: 150px; overflow: hidden; border-radius: 50%;">
+                  <img class="img-fluid" src="img/baim.jpeg" alt="Rajaki Dimas"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+                </div>
+                <h5 class="fw-bold mb-1">Rajaki Dimas Baim J</h5>
+                <small>Materi</small><br />
+                <small>Presentasi</small>
+
+              </div>
+              <div class="d-flex justify-content-center bg-primary p-3">
+                <a class="btn btn-square text-primary bg-white m-1" href="https://www.instagram.com/dmassrrrr/"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+              <div class="text-center p-4">
+                <div class="image-container mx-auto mb-4"
+                  style="width: 150px; height: 150px; overflow: hidden; border-radius: 50%;">
+                  <img class="img-fluid" src="img/arsyad.jpeg" alt="Arsyad Aditya"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+                </div>
+                <h5 class="fw-bold mb-1">Arsyad Aditya Putra</h5>
+                <small>Mading</small><br />
+                <small>Presentasi</small>
+              </div>
+              <div class="d-flex justify-content-center bg-primary p-3">
+                <a class="btn btn-square text-primary bg-white m-1" href="https://www.instagram.com/arsyad.ape/"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+              <div class="text-center p-4">
+                <div class="image-container mx-auto mb-4"
+                  style="width: 150px; height: 150px; overflow: hidden; border-radius: 50%;">
+                  <img class="img-fluid" src="img/ibra.jpeg" alt="Muhammad Ibrahim"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+                </div>
+                <h5 class="fw-bold mb-1">Muhammad Ibrahim Alifah</h5>
+                <small>Materi</small><br />
+                <small>Presentasi</small>
+
+              </div>
+              <div class="d-flex justify-content-center bg-primary p-3">
+                <a class="btn btn-square text-primary bg-white m-1" href="https://www.instagram.com/hflaba_/"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+              <div class="text-center p-4">
+                <div class="image-container mx-auto mb-4"
+                  style="width: 150px; height: 150px; overflow: hidden; border-radius: 50%;">
+                  <img class="img-fluid" src="img/nindya.jpeg" alt="Nindya Astuti"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+                </div>
+                <h5 class="fw-bold mb-1">Nindya Astuti A</h5>
+                <small>Materi</small> <br>
+                <small>Presentasi</small>
+
+              </div>
+              <div class="d-flex justify-content-center bg-primary p-3">
+                <a class="btn btn-square text-primary bg-white m-1" href="https://www.instagram.com/niindyaaa__/"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Team End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5 px-lg-5">
+        <div class="row gy-5 gx-4 pt-5">
+          <div class="col-lg-5 col-md-12">
+            <div class="row gy-5 g-4">
+              <div class="col-md-6">
+                <h5 class="fw-bold text-white mb-4">Menu</h5>
+                <a class="btn btn-link active" href="about.html">About Us</a>
+                <a class="btn btn-link" href="sistem.html">Sistem Pertahanan dan keamanan</a>
+                <a class="btn btn-link" href="hi.html">Hubungan Internasional</a>
+                <a class="btn btn-link" href="nilai.html">Nilai Pancasila</a>
+                <a class="btn btn-link" href="sdgs.html">SDGs</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h5 class="fw-bold text-white mb-4">Get In Touch</h5>
+            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Jl. Jenggolo No.2 A, Bedrek, Siwalanpanji, Kec.
+              Buduran, Kabupaten Sidoarjo, Jawa Timur 61219</p>
+            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>031 8964 034</p>
+            <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@smkn2buduran.sch.id</p>
+            <div class="d-flex pt-2">
+              <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@SMKN2BUDURAN"><i
+                  class="fab fa-youtube"></i></a>
+              <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/x.xxerpeel/?hl=en"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container px-lg-5">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&copy; <a class="border-bottom"
+                href="#">Kelompok 5</a>, All Right Reserved.</div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Home</a>
+                <a href="">Cookies</a>
+                <a href="">Help</a>
+                <a href="">FQAs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

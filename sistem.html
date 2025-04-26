@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sistem Pertahanan Dan Keamanan</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="images/garuda1.png" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      /* Core styling with original green colors */
+      :root {
+        --primary: #7ebc12; /* Green primary color */
+        --secondary: #5a9e0b; /* Darker green for secondary */
+        --accent: #8fd619; /* Lighter green for accents */
+        --light: #f8f9fa; /* Light background */
+        --dark: #343a40; /* Dark text */
+      }
+
+      .hero-section {
+        background-color: #7ebc12; /* Original green color preserved */
+        color: white;
+        padding: 100px 0;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        top: -80px;
+        right: -80px;
+        animation: float 8s infinite ease-in-out;
+      }
+
+      .hero-section::after {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        bottom: -50px;
+        left: -50px;
+        animation: float 6s infinite ease-in-out reverse;
+      }
+
+      .hero-header {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-header::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        top: -50px;
+        left: 0;
+        animation: float 8s infinite ease-in-out;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate(20px, 20px) rotate(10deg);
+        }
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+      }
+
+      .section-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        height: auto; /* Changed from 100% to auto */
+        border: none;
+        background-color: var(--light);
+        display: block !important; /* Ensure section cards are displayed */
+        visibility: visible !important; /* Ensure visibility */
+        opacity: 1 !important; /* Override animation opacity */
+      }
+
+      .section-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 168, 107, 0.15); /* Keeping original green shadow */
+      }
+
+      .card-header-custom {
+        background-color: var(--primary) !important; /* Forcing primary color for header */
+        color: white;
+        padding: 18px 24px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-header-custom::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+        animation: shine 4s infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          transform: translateX(-200%);
+        }
+        100% {
+          transform: translateX(200%);
+        }
+      }
+
+      .card-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        color: var(--primary); /* Keeping original primary color */
+        transition: transform 0.5s ease;
+      }
+
+      .section-card:hover .card-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .search-section {
+        background-color: white;
+        border-radius: 20px;
+        padding: 35px;
+        box-shadow: 0 10px 30px rgba(0, 168, 107, 0.15); /* Keeping original green shadow */
+        margin-top: -80px;
+        position: relative;
+        z-index: 10;
+        border-top: 5px solid var(--accent);
+      }
+
+      .form-control {
+        border-radius: 10px;
+        padding: 12px 20px;
+        border: 2px solid #f0f0f0;
+        transition: all 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary); /* Keeping original primary color */
+        box-shadow: 0 0 0 3px rgba(0, 168, 107, 0.2); /* Keeping original green shadow */
+      }
+
+      .btn-primary {
+        background-color: var(--primary); /* Keeping original primary color */
+        border-color: var(--primary); /* Keeping original primary color */
+        border-radius: 10px;
+        font-weight: 600;
+        padding: 10px 20px;
+        transition: all 0.3s;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary); /* Keeping original secondary color */
+        border-color: var(--secondary); /* Keeping original secondary color */
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 168, 107, 0.3); /* Keeping original green shadow */
+      }
+
+      .nav-pills .nav-link {
+        color: var(--dark);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s;
+        padding: 10px 20px;
+        margin: 0 5px;
+      }
+
+      .nav-pills .nav-link:hover {
+        background-color: rgba(0, 168, 107, 0.1); /* Keeping original green hover */
+      }
+
+      .nav-pills .nav-link.active {
+        background-color: var(--primary); /* Keeping original primary color */
+        color: white;
+        box-shadow: 0 5px 15px rgba(0, 168, 107, 0.3); /* Keeping original green shadow */
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+      }
+
+      /* Styling for the security incident section */
+      .security-incident-card {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #fff;
+        transition: transform 0.3s ease;
+        display: block !important; /* Ensure display */
+      }
+
+      .security-incident-card .card-header-custom {
+        background: var(--primary) !important; /* Using primary variable and forcing it */
+        color: white;
+        padding: 1.25rem;
+        border-bottom: 3px solid #f8c291;
+      }
+
+      /* Fix for video container to eliminate black space */
+      video {
+        object-fit: cover; /* Make video fill the container */
+        width: 100%;
+        height: 100%;
+        display: block; /* Prevent extra space */
+      }
+
+      .video-container {
+        background-color: #000;
+        height: 100%; /* Change from min-height to height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .embed-responsive {
+        position: relative;
+        height: 100%; /* Change from min-height to height */
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .content-container {
+        background-color: #f8f9fa;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .security-incident-title {
+        color: #2c3e50;
+        border-bottom: 2px solid #f8c291;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+
+      .security-text {
+        color: #555;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      .incident-highlights {
+        background-color: #f0f5fa;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #2c3e50;
+      }
+
+      .strategy-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .strategy-list li {
+        padding: 8px 0;
+        position: relative;
+        padding-left: 28px;
+      }
+
+      .strategy-list li i {
+        position: absolute;
+        left: 0;
+        top: 10px;
+        color: #2c3e50;
+      }
+
+      .strategi-section .row.g-0 {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .strategi-section .col-md-6 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Make the fullscreen button more visible */
+      /* .fullscreen-btn {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        z-index: 10;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+        background-color: rgba(126, 188, 18, 0.8); Using the primary green with transparency
+        border: none;
+      }
+
+      .fullscreen-btn:hover {
+        opacity: 1;
+        background-color: rgba(126, 188, 18, 1);
+      } */
+
+      @media (max-width: 767.98px) {
+        .video-container {
+          height: 300px; /* Set fixed height on mobile */
+        }
+
+        .embed-responsive {
+          height: 300px;
+        }
+      }
+
+      /* Fix Animation for the section - IMPORTANT for search functionality */
+      .animate-on-scroll,
+      .tni-section,
+      .polri-section,
+      .hukum-section,
+      .strategi-section {
+        opacity: 1 !important; /* Force content to be visible */
+        transform: translateY(0) !important; /* Prevent content from being hidden */
+        transition: none !important; /* Disable transitions completely */
+        display: block; /* Default display setting */
+        visibility: visible !important; /* Ensure visibility */
+      }
+
+      /* Explicitly fix card bodies */
+      .card-body {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      /* Media queries for responsive design */
+      @media (max-width: 767.98px) {
+        .embed-responsive {
+          min-height: 250px;
+        }
+
+        .row.g-0 {
+          flex-direction: column;
+        }
+
+        .col-md-6 {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-xxl bg-white p-0">
+      <!-- Spinner Start -->
+      <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar & Hero Start -->
+      <div class="container-xxl position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+          <a href="" class="navbar-brand p-0">
+            <img src="images/garuda1.png" alt="Logo" style="height: 70px; margin-right: 10px" />
+            <!-- <h1 class="m-0 d-inline-block align-middle">Garuda</h1> -->
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+              <a href="index.html" class="nav-item nav-link">Beranda</a>
+              <a href="about.html" class="nav-item nav-link">Tentang</a>
+              <a href="sistem.html" class="nav-item nav-link active">Sistem pertahanan</a>
+              <a href="hi.html" class="nav-item nav-link">Hubungan Internasional</a>
+              <a href="nilai.html" class="nav-item nav-link">Nilai Pancasila</a>
+              <a href="sdgs.html" class="nav-item nav-link">SDGS</a>
+            </div>
+          </div>
+        </nav>
+        <div class="container-xxl py-5 bg-primary hero-header mb-5">
+          <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 pt-5">
+              <div class="col-12 text-center text-lg-start">
+                <h1 class="display-4 text-white animated slideInLeft">
+                  Sistem Pertahanan Dan Keamanan <br />
+                  Negara Indonesia
+                </h1>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center justify-content-lg-start animated slideInLeft">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar & Hero End -->
+
+      <!-- Hero Section Start -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#7EBC12"
+          fill-opacity="1"
+          d="M0,160L60,144C120,128,240,96,360,85.3C480,75,600,85,720,117.3C840,149,960,203,1080,197.3C1200,192,1320,128,1380,96L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        >
+          <div class="hero-section animate__animated animate__fadeIn">
+            <div class="container text-center">
+              <h1 class="display-4 fw-bold mb-4 animate__animated animate__slideInDown">Sistem Pertahanan dan Keamanan Negara Indonesia</h1>
+              <p class="lead mb-0 animate__animated animate__slideInUp animate__delay-1s">Menjaga Kedaulatan, Keutuhan, dan Keselamatan Bangsa</p>
+            </div>
+          </div>
+        </path>
+      </svg>
+      <!-- Hero Section End -->
+
+      <!-- Search Section Start -->
+      <div class="container">
+        <div class="search-section mb-5 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="text-center mb-4">
+                <h4 class="fw-bold">Cari Informasi Tentang <span class="highlight-text">Sistem Pertahanan dan Keamanan</span></h4>
+                <p class="text-muted">Temukan informasi lengkap tentang sistem pertahanan dan keamanan negara Indonesia</p>
+              </div>
+              <div class="position-relative">
+                <input class="form-control bg-light py-3 ps-4 pe-5" type="text" id="search-input" placeholder="Masukkan kata kunci pencarian..." />
+                <button type="button" id="search-button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2"><i class="bi bi-search"></i> Cari</button>
+              </div>
+
+              <div class="mt-4">
+                <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">Semua</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-tni-tab" data-bs-toggle="pill" data-bs-target="#pills-tni" type="button" role="tab" aria-controls="pills-tni" aria-selected="false">TNI</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-polri-tab" data-bs-toggle="pill" data-bs-target="#pills-polri" type="button" role="tab" aria-controls="pills-polri" aria-selected="false">POLRI</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-hukum-tab" data-bs-toggle="pill" data-bs-target="#pills-hukum" type="button" role="tab" aria-controls="pills-hukum" aria-selected="false">Hukum</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-strategi-tab" data-bs-toggle="pill" data-bs-target="#pills-strategi" type="button" role="tab" aria-controls="pills-strategi" aria-selected="false">Contoh</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Search Section End -->
+
+      <!-- Main Content Start -->
+      <div class="container py-5">
+        <div class="row g-4" id="content-container">
+          <!-- TNI Section -->
+          <div class="col-lg-12 mb-4 animate-on-scroll tni-section">
+            <div class="section-card">
+              <div class="card-header-custom d-flex align-items-center">
+                <h2 class="mb-0">TNI (Tentara Nasional Indonesia)</h2>
+              </div>
+              <div class="card-body p-4">
+                <div class="text-center mb-4">
+                  <img src="images/tni.jpg" alt="Logo TNI" class="img-fluid rounded mb-3" style="max-width: 400px" />
+                </div>
+                <p class="lead">
+                  TNI adalah komponen utama dalam sistem pertahanan negara Indonesia yang bertugas menegakkan kedaulatan negara, mempertahankan keutuhan wilayah NKRI, dan melindungi segenap bangsa dari ancaman dan gangguan.
+                </p>
+
+                <h5 class="fw-bold mb-3 mt-4">Struktur TNI</h5>
+                <p>TNI terdiri dari tiga angkatan bersenjata:</p>
+                <ul>
+                  <li><strong>TNI Angkatan Darat (TNI-AD)</strong> - Bertugas melaksanakan tugas TNI di bidang pertahanan di wilayah darat</li>
+                  <li><strong>TNI Angkatan Laut (TNI-AL)</strong> - Bertugas melaksanakan tugas TNI di bidang pertahanan di wilayah laut</li>
+                  <li><strong>TNI Angkatan Udara (TNI-AU)</strong> - Bertugas melaksanakan tugas TNI di bidang pertahanan di wilayah udara</li>
+                </ul>
+
+                <h5 class="fw-bold mb-3 mt-4">Tugas Pokok TNI</h5>
+                <p>Sesuai dengan UU No. 34 Tahun 2004 tentang TNI, tugas pokok TNI adalah:</p>
+                <ul>
+                  <li>Menegakkan kedaulatan negara</li>
+                  <li>Mempertahankan keutuhan wilayah NKRI yang berdasarkan Pancasila dan UUD 1945</li>
+                  <li>Melindungi segenap bangsa dan seluruh tumpah darah Indonesia dari ancaman dan gangguan</li>
+                  <li>Melaksanakan operasi militer selain perang (OMSP)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- POLRI Section -->
+          <div class="col-lg-12 mb-4 animate-on-scroll polri-section">
+            <div class="section-card">
+              <div class="card-header-custom d-flex align-items-center">
+                <h2 class="mb-0">POLRI (Kepolisian Republik Indonesia)</h2>
+              </div>
+              <div class="card-body p-4">
+                <div class="text-center mb-4">
+                  <img src="images/polri.jpg" alt="Logo POLRI" class="img-fluid rounded mb-3" style="max-width: 400px" />
+                </div>
+                <p class="lead">POLRI adalah institusi negara yang berperan dalam memelihara keamanan dan ketertiban masyarakat, menegakkan hukum, serta memberikan perlindungan, pengayoman, dan pelayanan kepada masyarakat. Yang didirikan pada tanggal 1 Juli yang setiap tahunnya diperingati sebagai Hari Bhayangkara hingga saat ini.</p>
+
+                <h5 class="fw-bold mb-3 mt-4">Struktur POLRI</h5>
+                <p>Struktur organisasi POLRI meliputi:</p>
+                <ul>
+                  <li><strong>Markas Besar (Mabes) POLRI</strong> - Tingkat pusat</li>
+                  <li><strong>Kepolisian Daerah (Polda)</strong> - Tingkat provinsi</li>
+                  <li><strong>Kepolisian Resor (Polres)</strong> - Tingkat kabupaten/kota</li>
+                  <li><strong>Kepolisian Sektor (Polsek)</strong> - Tingkat kecamatan</li>
+                </ul>
+
+                <h5 class="fw-bold mb-3 mt-4">Tugas dan Fungsi POLRI</h5>
+                <p>Berdasarkan UU No. 2 Tahun 2002 tentang Kepolisian Negara RI, POLRI memiliki tugas dan fungsi:</p>
+                <ul>
+                  <li>Memelihara keamanan dan ketertiban masyarakat</li>
+                  <li>Menegakkan hukum</li>
+                  <li>Memberikan perlindungan, pengayoman, dan pelayanan kepada masyarakat</li>
+                  <li>Menanggulangi kejahatan dan pelanggaran hukum</li>
+                  <li>Melakukan penyelidikan dan penyidikan terhadap semua tindak pidana</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hukum Section -->
+          <div class="col-lg-12 mb-4 animate-on-scroll hukum-section">
+            <div class="section-card">
+              <div class="card-header-custom d-flex align-items-center">
+                <h2 class="mb-0">Landasan Hukum Sistem Pertahanan dan Keamanan</h2>
+              </div>
+              <div class="card-body p-4">
+                <div class="text-center mb-4">
+                  <i class="bi bi-journal-text card-icon"></i>
+                </div>
+                <p class="lead">Sistem pertahanan dan keamanan negara Indonesia dilandasi oleh berbagai peraturan perundang-undangan yang memberikan kerangka hukum bagi pelaksanaan fungsi pertahanan dan keamanan.</p>
+
+                <h5 class="fw-bold mb-3 mt-4">Dasar Konstitusional</h5>
+                <ul>
+                  <li><strong>UUD 1945</strong> - Pasal 27 ayat (3): "Setiap warga negara berhak dan wajib ikut serta dalam upaya pembelaan negara."</li>
+                  <li><strong>UUD 1945</strong> - Pasal 30 ayat (1): "Tiap-tiap warga negara berhak dan wajib ikut serta dalam usaha pertahanan dan keamanan negara."</li>
+                  <li>
+                    <strong>UUD 1945</strong> - Pasal 30 ayat (2): "Usaha pertahanan dan keamanan negara dilaksanakan melalui sistem pertahanan dan keamanan rakyat semesta oleh TNI dan POLRI, sebagai kekuatan utama, dan rakyat, sebagai
+                    kekuatan pendukung."
+                  </li>
+                </ul>
+
+                <h5 class="fw-bold mb-3 mt-4">Peraturan Perundang-undangan</h5>
+                <ul>
+                  <li><strong>UU No. 3 Tahun 2002</strong> tentang Pertahanan Negara - Mengatur penyelenggaraan pertahanan negara untuk menjaga kedaulatan dan keutuhan wilayah NKRI</li>
+                  <li><strong>UU No. 34 Tahun 2004</strong> tentang Tentara Nasional Indonesia - Mengatur posisi, peran, fungsi, tugas, dan kewenangan TNI</li>
+                  <li><strong>UU No. 2 Tahun 2002</strong> tentang Kepolisian Negara Republik Indonesia - Mengatur tentang fungsi, tugas, dan wewenang POLRI</li>
+                  <li><strong>UU No. 23 Tahun 2019</strong> tentang Pengelolaan Sumber Daya Nasional untuk Pertahanan Negara - Mengatur komponen cadangan dan komponen pendukung pertahanan negara</li>
+                </ul>
+
+                <h5 class="fw-bold mb-3 mt-4">Implementasi Hukum dalam Sistem Pertahanan</h5>
+                <p>
+                  Landasan hukum tersebut menjadi dasar bagi pelaksanaan sistem pertahanan dan keamanan negara Indonesia, termasuk pembagian tugas antara TNI dan POLRI, keterlibatan warga negara dalam upaya bela negara, serta pengelolaan
+                  sumber daya nasional untuk pertahanan.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strategi Section with Video -->
+          <div class="col-lg-12 mb-4 animate-on-scroll strategi-section">
+            <div class="section-card security-incident-card">
+              <div class="card-header-custom d-flex align-items-center">
+                <h2 class="mb-0">Contoh Pertahanan dan Keamanan Indonesia</h2>
+              </div>
+              <div class="card-body p-0">
+                <div class="row g-0">
+                  <!-- Video Column (Left) -->
+                  <div class="col-md-6 video-container">
+                    <div class="embed-responsive">
+                      <video id="security-video" controls poster="images/dampak-revisi.jpg">
+                        <source src="video/penjelasan_ruutni.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+
+                  <!-- Text Column (Right) -->
+                  <div class="col-md-6 content-container">
+                    <div class="p-4">
+                      <h4 class="fw-bold mb-3 security-incident-title">Demonstrasi Penolakan Revisi UU TNI 2025</h4>
+
+                      <p class="security-text">
+                        Pada Maret 2025, gelombang demonstrasi besar terjadi di berbagai kota Indonesia menolak pengesahan revisi UU TNI. Demonstrasi yang dimotori oleh mahasiswa dan kelompok masyarakat sipil ini berlangsung serentak di Jakarta, Medan, Bandung, Semarang, Solo, Yogyakarta, Surabaya, Manado, dan kota-kota lainnya. Para demonstran khawatir revisi UU TNI akan mengembalikan Indonesia ke masa Orde Baru dengan militerisme yang lebih masif di berbagai sektor.
+                      </p>
+                      <p class="security-text">
+                        Koordinator Kontras, Dimas Bagus menilai Revisi UU TNI berisiko mengganggu profesionalisme TNI dan membuka peluang bagi banyak prajurit militer untuk terlibat dalam ranah sipil. Kekhawatiran lain adalah potensi peningkatan bentrokan, kekerasan, hingga pelanggaran HAM saat TNI mengamankan aset digital dan proyek strategis nasional. Demonstrasi ini menunjukkan dinamika hubungan antara masyarakat sipil dan institusi pertahanan dalam sistem demokrasi Indonesia.
+                      </p>
+
+                      <div class="incident-highlights mt-4">
+                        <h5 class="fw-bold mb-3">Isu Utama dalam Penolakan Revisi UU TNI:</h5>
+                        <ul class="strategy-list">
+                          <li><i class="bi bi-shield-fill-check"></i> Kekhawatiran kembalinya dwifungsi militer seperti era Orde Baru</li>
+                          <li><i class="bi bi-geo-alt-fill"></i> Perluasan ruang lingkup tugas TNI yang dinilai berlebihan</li>
+                          <li><i class="bi bi-people-fill"></i> Kurangnya partisipasi publik dalam proses penyusunan revisi UU</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main Content End -->
+
+      <!-- Footer Start -->
+      <div class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5 px-lg-5">
+          <div class="row gy-5 gx-4 pt-5">
+            <div class="col-lg-5 col-md-12">
+              <div class="row gy-5 g-4">
+                <div class="col-md-6">
+                  <h5 class="fw-bold text-white mb-4">Menu</h5>
+                  <a class="btn btn-link" href="about.html">About Us</a>
+                  <a class="btn btn-link active" href="sistem.html">Sistem Pertahanan dan keamanan</a>
+                  <a class="btn btn-link" href="hi.html">Hubungan Internasional</a>
+                  <a class="btn btn-link" href="nilai.html">Nilai Pancasila</a>
+                  <a class="btn btn-link" href="sdgs.html">SDGs</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <h5 class="fw-bold text-white mb-4">Get In Touch</h5>
+              <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Jl. Jenggolo No.2 A, Bedrek, Siwalanpanji, Kec. Buduran, Kabupaten Sidoarjo, Jawa Timur 61219</p>
+              <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>031 8964 034</p>
+              <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@smkn2buduran.sch.id</p>
+              <div class="d-flex pt-2">
+                <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@SMKN2BUDURAN"><i class="fab fa-youtube"></i></a>
+                <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/x.xxerpeel/?hl=en"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-lg-5">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&copy; <a class="border-bottom" href="#">Kelompok 5</a>, All Right Reserved.</div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                  <a href="">Home</a>
+                  <a href="">Cookies</a>
+                  <a href="">Help</a>
+                  <a href="">FQAs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+      // FUNGSI SEARCH
+      // Wait for DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM fully loaded - Search and tab script initializing");
+
+        // Make sure spinner is removed on load
+        setTimeout(function () {
+          document.getElementById("spinner").classList.remove("show");
+        }, 500);
+
+        // Elements
+        const searchInput = document.getElementById("search-input");
+        const searchButton = document.getElementById("search-button");
+        const navPills = document.querySelectorAll(".nav-pills .nav-link");
+        const contentContainer = document.getElementById("content-container");
+
+        // Content sections - ensure they're properly selected
+        const tniSection = document.querySelector(".tni-section");
+        const polriSection = document.querySelector(".polri-section");
+        const hukumSection = document.querySelector(".hukum-section");
+        const strategiSection = document.querySelector(".strategi-section");
+        const allSections = [tniSection, polriSection, hukumSection, strategiSection];
+
+        // Log sections to verify they're found
+        console.log("TNI Section:", tniSection);
+        console.log("POLRI Section:", polriSection);
+        console.log("Hukum Section:", hukumSection);
+        console.log("Strategi Section:", strategiSection);
+
+        // Function to show or hide sections based on category
+        function filterSections(category) {
+          console.log("Filtering sections for category:", category);
+
+          // First, hide all sections
+          allSections.forEach((section) => {
+            if (section) {
+              section.style.display = "none";
+            }
+          });
+
+          // Then show sections based on selected category
+          switch (category) {
+            case "all":
+              allSections.forEach((section) => {
+                if (section) {
+                  section.style.display = "block";
+                }
+              });
+              break;
+            case "tni":
+              if (tniSection) tniSection.style.display = "block";
+              break;
+            case "polri":
+              if (polriSection) polriSection.style.display = "block";
+              break;
+            case "hukum":
+              if (hukumSection) hukumSection.style.display = "block";
+              break;
+            case "strategi":
+              if (strategiSection) strategiSection.style.display = "block";
+              break;
+          }
+        }
+
+        // Function to handle search
+        function handleSearch() {
+          const searchTerm = searchInput.value.toLowerCase().trim();
+          console.log("Searching for:", searchTerm);
+
+          // If search term is empty, filter by active category
+          if (searchTerm === "") {
+            const activeTab = document.querySelector(".nav-link.active");
+            if (activeTab) {
+              const category = activeTab.id.replace("pills-", "").replace("-tab", "");
+              filterSections(category);
+            } else {
+              filterSections("all"); // Default to all if no active tab
+            }
+            return;
+          }
+
+          // Get the active category
+          const activeTab = document.querySelector(".nav-link.active");
+          const activeCategory = activeTab ? activeTab.id.replace("pills-", "").replace("-tab", "") : "all";
+
+          // Hide all sections first
+          allSections.forEach((section) => {
+            if (section) {
+              section.style.display = "none";
+            }
+          });
+
+          // Determine which sections to search based on active category
+          let sectionsToSearch = [];
+          if (activeCategory === "all") {
+            sectionsToSearch = allSections;
+          } else if (activeCategory === "tni" && tniSection) {
+            sectionsToSearch = [tniSection];
+          } else if (activeCategory === "polri" && polriSection) {
+            sectionsToSearch = [polriSection];
+          } else if (activeCategory === "hukum" && hukumSection) {
+            sectionsToSearch = [hukumSection];
+          } else if (activeCategory === "strategi" && strategiSection) {
+            sectionsToSearch = [strategiSection];
+          }
+
+          // Check if the search term exists in each section
+          let foundMatch = false;
+          sectionsToSearch.forEach((section) => {
+            if (section && section.innerText && section.innerText.toLowerCase().includes(searchTerm)) {
+              section.style.display = "block";
+              foundMatch = true;
+              console.log("Found match in section:", section);
+            }
+          });
+
+          // Show a message if no matches found
+          if (!foundMatch) {
+            // Remove any existing no-result message
+            const existingNoResult = document.querySelector(".alert.alert-info");
+            if (existingNoResult) {
+              existingNoResult.parentElement.remove();
+            }
+
+            const noResultDiv = document.createElement("div");
+            noResultDiv.className = "col-12 text-center my-5";
+            noResultDiv.innerHTML = `
+          <div class="alert alert-info">
+            <i class="bi bi-info-circle-fill me-2"></i>
+            Maaf, tidak ada hasil yang ditemukan untuk pencarian "${searchTerm}"
+          </div>
+        `;
+
+            contentContainer.appendChild(noResultDiv);
+          } else {
+            // Remove any existing no-result message if results are found
+            const existingNoResult = document.querySelector(".alert.alert-info");
+            if (existingNoResult) {
+              existingNoResult.parentElement.remove();
+            }
+          }
+        }
+
+        // Add click event listeners to all nav pills
+        navPills.forEach((pill) => {
+          pill.addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent default behavior
+            console.log("Tab clicked:", this.id);
+
+            // Remove active class from all pills
+            navPills.forEach((p) => {
+              p.classList.remove("active");
+            });
+
+            // Add active class to clicked pill
+            this.classList.add("active");
+
+            // Get category from the pill id
+            const category = this.id.replace("pills-", "").replace("-tab", "");
+            console.log("Selected category:", category);
+
+            // Clear search input
+            searchInput.value = "";
+
+            // Remove any no-result message
+            const existingNoResult = document.querySelector(".alert.alert-info");
+            if (existingNoResult) {
+              existingNoResult.parentElement.remove();
+            }
+
+            // Filter sections based on selected category
+            filterSections(category);
+          });
+        });
+
+        // Add event listener to search button
+        if (searchButton) {
+          searchButton.addEventListener("click", handleSearch);
+          console.log("Search button event listener added");
+        }
+
+        // Add event listener for Enter key in search input
+        if (searchInput) {
+          searchInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+              handleSearch();
+            }
+          });
+          console.log("Search input event listener added");
+        }
+
+        // Handle fullscreen video functionality
+        const videoElement = document.getElementById("security-video");
+        if (videoElement) {
+          console.log("Video element found:", videoElement);
+
+          // Add fullscreen button if it doesn't exist
+          // if (!document.querySelector(".fullscreen-btn")) {
+          //   const fullscreenButton = document.createElement("button");
+          //   fullscreenButton.className = "btn btn-primary fullscreen-btn";
+          //   fullscreenButton.innerHTML = '<i class="bi bi-fullscreen"></i>';
+          //   fullscreenButton.onclick = function () {
+          //     openFullscreen("security-video");
+          //   };
+
+          const videoContainer = document.querySelector(".embed-responsive");
+          if (videoContainer) {
+            videoContainer.appendChild(fullscreenButton);
+          }
+        }
+
+        // Function to open fullscreen
+        window.openFullscreen = function (videoId) {
+          console.log("Attempting to open fullscreen for:", videoId);
+          const video = document.getElementById(videoId);
+
+          if (video) {
+            if (video.requestFullscreen) {
+              video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+              /* Safari */
+              video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+              /* IE11 */
+              video.msRequestFullscreen();
+            }
+          }
+        };
+
+        // Initialize - show all sections by default
+        filterSections("all");
+        console.log("Search and tab script initialized");
+      });
+    </script>
+  </body>
+</html>

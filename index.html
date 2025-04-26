@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>PKN</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
+
+  <!-- Favicon -->
+  <link href="images/garuda1.png" rel="icon" />
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .section-title {
+      position: relative;
+      text-align: center;
+      margin: 0 auto 30px;
+      padding-bottom: 30px;
+      max-width: 800px;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #2d9132, #63d667);
+    }
+
+    .section-title h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #135c15;
+      text-transform: uppercase;
+    }
+
+    .section-title p {
+      color: #555;
+      font-size: 16px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -12px;
+    }
+
+    .col-lg-4 {
+      width: 33.333%;
+      padding: 12px;
+    }
+
+    @media (max-width: 992px) {
+      .col-lg-4 {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .col-lg-4 {
+        width: 100%;
+      }
+    }
+
+    .concept-card {
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      border-top: 5px solid #27ae60;
+    }
+
+    .concept-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .icon-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+      z-index: 1;
+    }
+
+    .icon-circle i {
+      color: white;
+      font-size: 24px;
+    }
+
+    .card-header {
+      text-align: center;
+      border-bottom: 1px solid #eaeaea;
+      padding: 35px 20px 20px;
+    }
+
+    .card-header h4 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .card-header p {
+      color: #666;
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .concept-card:hover .card-img img {
+      transform: scale(1.05);
+    }
+
+    .card-footer {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .btn-concept {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+    }
+
+    .btn-concept:hover {
+      background: linear-gradient(135deg, #219652, #27ae60);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+    }
+
+    .wow {
+      animation-duration: 1s;
+    }
+
+    .fadeInUp {
+      animation-name: fadeInUp;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    /* DI BAWAH INI ADALAH STYLE UNTUK 3 FONDASI NKRI */
+    .hero {
+      background: linear-gradient(135deg, var(--light-green) 0%, white 100%);
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d8a3f' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.2;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--primary-green);
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: #555;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .foundations {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .foundation-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 320px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .foundation-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+      background: var(--primary-green);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .card-header h2 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .card-header .number {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: white;
+      color: var(--primary-green);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .card-body {
+      padding: 25px;
+    }
+
+    .card-body p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .card-body ul {
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    .card-body li {
+      margin-bottom: 8px;
+    }
+
+    .conclusion {
+      background: var(--light-green);
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 60px;
+      border-radius: 12px;
+    }
+
+    .conclusion h2 {
+      color: var(--primary-green);
+      margin-bottom: 20px;
+    }
+
+    .conclusion p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
+    .pillar {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pillar-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--primary-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba(13, 138, 63, 0.3);
+    }
+
+    .pillar-line {
+      width: 100px;
+      height: 8px;
+      background: var(--light-green);
+      margin: 0 -10px;
+    }
+
+    .garuda-container {
+      text-align: center;
+      margin: 50px 0 30px;
+    }
+
+    .indonesia-map {
+      position: relative;
+      background-color: var(--light-green);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .indonesia-map::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d8a3f' fill-opacity='0.05'%3E%3Cpath d='M50 50 L50 0 L100 0 L100 50 L50 50 L50 100 L0 100 L0 50 L50 50'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.1;
+    }
+
+    .map-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .foundations {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .foundation-card {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-xxl bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-xxl position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+          <img src="images/garuda1.png" alt="Logo" style="height: 70px; margin-right: 10px" />
+          <!-- <h1 class="m-0 d-inline-block align-middle">Garuda</h1> -->
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link active">Beranda</a>
+            <a href="about.html" class="nav-item nav-link">Tentang</a>
+            <a href="sistem.html" class="nav-item nav-link">Sistem pertahanan</a>
+            <a href="hi.html" class="nav-item nav-link">Hubungan Internasional</a>
+            <a href="nilai.html" class="nav-item nav-link">Nilai pancasila</a>
+            <a href="sdgs.html" class="nav-item nav-link">SDGS</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-xxl py-5 bg-primary hero-header mb-5">
+        <div class="container my-5 py-5 px-lg-5">
+          <div class="row g-5">
+            <div class="col-lg-6 pt-5 text-center text-lg-start">
+              <h1 class="display-6 text-white mb-4 animated slideInLeft">3 KONSEP NKRI: PERTAHANAN, HUBUNGAN
+                INTERNASIONAL, <br />DAN NILAI PANCASILA DALAM PEMBANGUNAN</h1>
+              <!-- <p class="text-white animated slideInLeft">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quibusdam minima aut quam, distinctio aliquid accusamus culpa, nihil pariatur itaque dicta! Excepturi, veritatis temporibus! Voluptatibus ipsam
+                  asperiores saepe commodi ullam.
+                </p> -->
+            </div>
+            <div class="col-lg-6 text-center text-lg-start">
+              <img class="img-fluid animated zoomIn" src="images/kartuindo.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- TIGA KONSEP NKRI -->
+    <div class="container-xxl">
+      <div class="container">
+        <div class="section-title wow fadeInUp">
+          <h1>Tiga Konsep NKRI</h1>
+          <p>tiga poin utama dalam kehidupan bernegara: pertahanan dan keamanan, hubungan internasional, serta peran
+            Pancasila dalam pembangunan.</p>
+        </div>
+
+        <div class="row">
+          <!-- Pertahanan dan Keamanan -->
+          <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="concept-card">
+              <div class="icon-circle">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="card-header">
+                <h4>Pertahanan dan Keamanan</h4>
+                <p>Sistem pertahanan dan keamanan yang melibatkan seluruh warga negara dalam menjaga kedaulatan NKRI</p>
+              </div>
+              <div class="card-img">
+                <img src="images/pertahanan.jpg" alt="Pertahanan dan Keamanan NKRI" />
+              </div>
+              <div class="card-footer">
+                <a href="sistem.html" class="btn-concept">Pelajari Lebih Lanjut</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hubungan Internasional -->
+          <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="concept-card">
+              <div class="icon-circle">
+                <i class="fas fa-globe-asia"></i>
+              </div>
+              <div class="card-header">
+                <h4>Hubungan Internasional</h4>
+                <p>Politik luar negeri Indonesia yang bebas aktif dalam menjalin kerja sama dengan negara-negara lain
+                </p>
+              </div>
+              <div class="card-img">
+                <img src="images/HI.png" alt="Hubungan Internasional Indonesia" />
+              </div>
+              <div class="card-footer">
+                <a href="hi.html" class="btn-concept">Pelajari Lebih Lanjut</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nilai Pancasila dalam Pembangunan -->
+          <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="concept-card">
+              <div class="icon-circle">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="card-header">
+                <h4>Nilai Pancasila dalam Pembangunan</h4>
+                <p>Implementasi nilai-nilai Pancasila sebagai landasan dalam pembangunan nasional Indonesia</p>
+              </div>
+              <div class="card-img">
+                <img src="images/nilaipancasila.jpg" alt="Nilai Pancasila dalam Pembangunan" />
+              </div>
+              <div class="card-footer">
+                <a href="nilai.html" class="btn-concept">Pelajari Lebih Lanjut</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Start -->
+    <!-- <div class="container-xxl py-5">
+        <div class="container px-lg-5">
+          <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
+            <h1 class="mb-3">Our Team Members</h1>
+            <p class="mb-1">Vero justo sed sed vero clita amet. Et justo vero sea diam elitr amet ipsum eos ipsum clita duo sed. Sed vero sea diam erat vero elitr sit clita.</p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+                <div class="text-center p-4">
+                  <img class="img-fluid rounded-circle mb-4" src="img/team-1.jpg" alt="" />
+                  <h5 class="fw-bold mb-1">Full Name</h5>
+                  <small>Designation</small>
+                </div>
+                <div class="d-flex justify-content-center bg-primary p-3">
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+                <div class="text-center p-4">
+                  <img class="img-fluid rounded-circle mb-4" src="img/team-2.jpg" alt="" />
+                  <h5 class="fw-bold mb-1">Full Name</h5>
+                  <small>Designation</small>
+                </div>
+                <div class="d-flex justify-content-center bg-primary p-3">
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+                <div class="text-center p-4">
+                  <img class="img-fluid rounded-circle mb-4" src="img/team-3.jpg" alt="" />
+                  <h5 class="fw-bold mb-1">Full Name</h5>
+                  <small>Designation</small>
+                </div>
+                <div class="d-flex justify-content-center bg-primary p-3">
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+              <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
+                <div class="text-center p-4">
+                  <img class="img-fluid rounded-circle mb-4" src="img/team-4.jpg" alt="" />
+                  <h5 class="fw-bold mb-1">Full Name</h5>
+                  <small>Designation</small>
+                </div>
+                <div class="d-flex justify-content-center bg-primary p-3">
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    <!-- Team End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5 px-lg-5">
+        <div class="row gy-5 gx-4 pt-5">
+          <div class="col-lg-5 col-md-12">
+            <div class="row gy-5 g-4">
+              <div class="col-md-6">
+                <h5 class="fw-bold text-white mb-4">Menu</h5>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="sistem.html">Sistem Pertahanan dan keamanan</a>
+                <a class="btn btn-link" href="hi.html">Hubungan Internasional</a>
+                <a class="btn btn-link" href="nilai.html">Nilai Pancasila</a>
+                <a class="btn btn-link" href="sdgs.html">SDGs</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h5 class="fw-bold text-white mb-4">Get In Touch</h5>
+            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Jl. Jenggolo No.2 A, Bedrek, Siwalanpanji, Kec.
+              Buduran, Kabupaten Sidoarjo, Jawa Timur 61219</p>
+            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>031 8964 034</p>
+            <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@smkn2buduran.sch.id</p>
+            <div class="d-flex pt-2">
+              <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@SMKN2BUDURAN"><i
+                  class="fab fa-youtube"></i></a>
+              <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/x.xxerpeel/?hl=en"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container px-lg-5">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&copy; <a class="border-bottom"
+                href="#">Kelompok 5</a>, All Right Reserved.</div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Home</a>
+                <a href="">Cookies</a>
+                <a href="">Help</a>
+                <a href="">FQAs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+
+  <script>
+    // ANIMASI CARD
+    // Simple animation for wow effect
+    document.addEventListener("DOMContentLoaded", function () {
+      const wowElements = document.querySelectorAll(".wow");
+
+      wowElements.forEach(function (element, index) {
+        const delay = element.getAttribute("data-wow-delay") || "0s";
+        const delaySeconds = parseFloat(delay);
+
+        setTimeout(function () {
+          element.classList.add("animated");
+        }, delaySeconds * 1000);
+      });
+    });
+    // ANIMASI CARD END
+  </script>
+</body>
+
+</html>
