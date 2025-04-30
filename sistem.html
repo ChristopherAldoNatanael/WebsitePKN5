@@ -1178,6 +1178,24 @@
     <script src="js/main.js"></script>
 
     <script>
+       document.addEventListener('DOMContentLoaded', function() {
+      var videos = document.querySelectorAll('video');
+      videos.forEach(function(video) {
+        if (!video.paused) {
+          video.pause();
+        }
+        if (video.hasAttribute('autoplay')) {
+          video.removeAttribute('autoplay');
+        }
+        video.autoplay = false;
+        video.addEventListener('play', function(e) {
+          if (!e.isTrusted) {
+            video.pause();
+          }
+        });
+      });
+      console.log('Pencegahan autoplay diterapkan pada semua video');
+    });
       // FUNGSI SEARCH
       // Wait for DOM to be fully loaded
       document.addEventListener("DOMContentLoaded", function () {
